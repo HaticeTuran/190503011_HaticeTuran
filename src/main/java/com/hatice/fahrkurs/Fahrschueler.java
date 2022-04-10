@@ -32,4 +32,9 @@ public class Fahrschueler extends Person{
     public void setBlutgruppe(String blutgruppe) {
         Blutgruppe = blutgruppe;
     }
+
+    @Override
+    public String toString(){
+        return super.toString() + " "+SchuelerNummer +" "+angemeldeteKus+" "+Blutgruppe;
+    }
 }

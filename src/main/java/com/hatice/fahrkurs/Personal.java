@@ -6,6 +6,7 @@ public class Personal extends Person{
     public Personal(String Tc){
         super(Tc);
     }
+
     public int getPersonalNummer() {
         return PersonalNummer;
     }
@@ -20,6 +21,11 @@ public class Personal extends Person{
 
     public void setRolle(String rolle) {
         Rolle = rolle;
+    }
+
+    @Override
+    public String toString(){
+        return super.toString() +" "+ PersonalNummer +" "+Rolle;
     }
 
 }

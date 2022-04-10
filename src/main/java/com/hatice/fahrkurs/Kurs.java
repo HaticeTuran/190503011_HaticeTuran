@@ -4,7 +4,14 @@ public class Kurs {
     Kursleiter Lehrer;
     int Kapazitaet;
     String Topic;
-    Pruefung Pruefungen;
+    Pruefung Pruefung;
+
+    public Kurs(Kursleiter lehrer, int kapazitaet, String topic, com.hatice.fahrkurs.Pruefung pruefung) {
+        Lehrer = lehrer;
+        Kapazitaet = kapazitaet;
+        Topic = topic;
+        Pruefung = pruefung;
+    }
 
     public Kursleiter getLehrer() {
         return Lehrer;
@@ -30,12 +37,17 @@ public class Kurs {
         Topic = topic;
     }
 
-    public Pruefung getPruefungen() {
-        return Pruefungen;
+    public Pruefung getPruefung() {
+        return Pruefung;
     }
 
-    public void setPruefungen(Pruefung pruefungen) {
-        Pruefungen = pruefungen;
+    public void setPruefung(Pruefung pruefungen) {
+        Pruefung = pruefungen;
+    }
+
+    @Override
+    public String toString(){
+        return Lehrer + " " + Kapazitaet + " " + Topic +" " +Pruefung;
     }
 
 

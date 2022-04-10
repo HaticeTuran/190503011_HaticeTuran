@@ -22,5 +22,9 @@ public class Kursleiter extends Personal{
     public void loescheKurs(Kurs k){
         Kurse.remove(k);
     }
+    @Override
+    public String toString(){
+        return super.toString();
+    }
 
 }

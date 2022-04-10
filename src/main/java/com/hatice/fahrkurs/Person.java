@@ -14,6 +14,18 @@ public class Person {
     public Person(String Tc){
         this.TC_Nummer = Tc;
     }
+
+    public Person(String name, String nachName, String TC_Nummer, Date geburtsdatum, String geschlecht, String adresse, String mailAdresse, int telefonNummer) {
+        Name = name;
+        NachName = nachName;
+        this.TC_Nummer = TC_Nummer;
+        Geburtsdatum = geburtsdatum;
+        Geschlecht = geschlecht;
+        Adresse = adresse;
+        MailAdresse = mailAdresse;
+        TelefonNummer = telefonNummer;
+    }
+
     public String getName() {
         return Name;
     }
@@ -82,4 +94,9 @@ public class Person {
         if(p.getTC_Nummer().equals(this.TC_Nummer)) return  true;
         else return false;
     }
+    @Override
+    public String toString(){
+        return Name + " "+ NachName+ " "+TC_Nummer+" "+Geburtsdatum+" " +Geschlecht+" " +Adresse+ " "+MailAdresse+" " +TelefonNummer;
+    }
+
 }
