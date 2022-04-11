@@ -1,10 +1,10 @@
 package com.hatice.fahrkurs;
 
 public class Kurs {
-    Kursleiter Lehrer;
-    int Kapazitaet;
-    String Topic;
-    Pruefung Pruefung;
+    private Kursleiter Lehrer;
+    private int Kapazitaet;
+    private String Topic;
+    private Pruefung Pruefung;
 
     public Kurs(Kursleiter lehrer, int kapazitaet, String topic, com.hatice.fahrkurs.Pruefung pruefung) {
         Lehrer = lehrer;

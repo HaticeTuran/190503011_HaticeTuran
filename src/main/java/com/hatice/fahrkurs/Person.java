@@ -3,14 +3,15 @@ package com.hatice.fahrkurs;
 import java.util.Date;
 
 public class Person {
-    String Name;
-    String NachName;
-    String TC_Nummer;
-    Date Geburtsdatum;
-    String Geschlecht;
-    String Adresse;
-    String MailAdresse;
-    int TelefonNummer;
+    private String Name;
+    private String NachName;
+    private String TC_Nummer;
+    private Date Geburtsdatum;
+    private String Geschlecht;
+    private String Adresse;
+    private String MailAdresse;
+    private int TelefonNummer;
+
     public Person(String Tc){
         this.TC_Nummer = Tc;
     }

@@ -3,10 +3,10 @@ package com.hatice.fahrkurs;
 import java.util.Date;
 
 public class Pruefung {
-    Date Datum;
-    String Ort;
-    String Topic;
-    int Note;
+    private Date Datum;
+    private String Ort;
+    private String Topic;
+    private int Note;
 
     public Pruefung(Date datum, String ort, String topic, int note) {
         Datum = datum;

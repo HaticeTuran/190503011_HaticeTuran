@@ -1,8 +1,8 @@
 package com.hatice.fahrkurs;
 
 public class Personal extends Person{
-    int PersonalNummer;
-    String Rolle;
+    private int PersonalNummer;
+    private String Rolle;
     public Personal(String Tc){
         super(Tc);
     }
