@@ -15,6 +15,9 @@ public class HelloApplication extends Application {
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
+        db database = new db();
+        database.connect();
+
     }
 
     public static void main(String[] args) {
