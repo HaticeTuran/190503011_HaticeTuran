@@ -1,14 +1,23 @@
 package com.hatice.fahrkurs;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 
-public class page1Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class page1Controller implements Initializable {
     @FXML
-    Button EditButton;
+    private Button EditButton;
 
     @FXML
-    ChoiceBox AktionChoise;
+    private ChoiceBox<String> AktionChoise;
+    private String[] Aktionen = {"Schueler loeschen", "Schueler einfuegen", "Schueler listen"};
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        AktionChoise.getItems().addAll(Aktionen);
+    }
 }
