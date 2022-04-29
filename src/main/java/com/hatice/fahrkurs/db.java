@@ -15,7 +15,7 @@ public class db {
 
             System.out.println("Connection to SQLite has been established.");
             Statement stmt = conn.createStatement();
-            stmt.executeUpdate("INSERT INTO Person VALUES('Hatice')");
+            stmt.executeUpdate("INSERT INTO Person (TC,Name,Nachname,Geburtsdatum) VALUES('12345678901','Hatice','Turan','01.01.2001')");
             ResultSet res = stmt.executeQuery("SELECT * FROM Person");
             if(res.next()){
                 System.out.println("username: "+res.getString("Name"));

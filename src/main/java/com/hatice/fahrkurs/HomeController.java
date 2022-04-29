@@ -25,7 +25,14 @@ public class HomeController {
     private Button Login;
 
     @FXML
+    private TextField BenutzerName;
+
+    @FXML
+    private PasswordField Passwort;
+
+    @FXML
     public void onAnmeldungButtonClick(ActionEvent event) throws Exception{
+        System.out.println(BenutzerName.getText());
 
         root = FXMLLoader.load(page1Controller.class.getResource("page1.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
