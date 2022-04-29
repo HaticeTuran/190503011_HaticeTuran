@@ -9,28 +9,27 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hatice.fahrkurs.Page1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hatice.fahrkurs.page1Controller">
    <children>
       <VBox prefHeight="400.0" prefWidth="145.0" style="-fx-background-color: #DD2E44;">
          <children>
             <HBox prefHeight="134.0" prefWidth="145.0">
                <children>
-                  <TextField fx:id="myLabel" promptText="İsim Soyisim">
+                  <TextField fx:id="myLabel" prefHeight="25.0" prefWidth="135.0" promptText="İsim Soyisim">
                      <HBox.margin>
-                        <Insets top="110.0" />
+                        <Insets left="5.0" top="110.0" />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
             <Pane prefHeight="38.0" prefWidth="145.0">
                <children>
-                  <Button fx:id="EditButton" layoutX="4.0" layoutY="7.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="137.0" text="Edit Profil" />
+                  <Button fx:id="EditButton" layoutX="5.0" layoutY="7.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Edit Profil" />
                </children>
             </Pane>
             <Pane prefHeight="70.0" prefWidth="145.0">
                <children>
-                  <ChoiceBox fx:id="AktionChoise" accessibleText="Aktion auswählen!" layoutX="-2.0" layoutY="9.0" prefHeight="25.0" prefWidth="150.0" />
+                  <ChoiceBox fx:id="AktionChoise" accessibleText="Aktion auswählen!" layoutX="5.0" layoutY="14.0" prefHeight="25.0" prefWidth="135.0" />
                </children>
             </Pane>
          </children>

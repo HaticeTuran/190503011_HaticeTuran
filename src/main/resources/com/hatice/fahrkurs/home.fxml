@@ -25,7 +25,7 @@
             <HBox prefHeight="50.0" prefWidth="324.0">
                <children>
                   <Pane prefHeight="49.0" prefWidth="56.0" />
-                  <TextField id="BenutzerName" fx:id="BenutzerName" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="191.0" promptText="Benutzer Name" >
+                  <TextField id="BenutzerName" fx:id="BenutzerName" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="191.0" promptText="Benutzer Name">
                      <HBox.margin>
                         <Insets top="15.0" />
                      </HBox.margin>
@@ -43,7 +43,7 @@
                         <Insets top="15.0" />
                      </HBox.margin>
                   </PasswordField>
-                  <Button id="Anmeldung" fx:id="Anmeldung" mnemonicParsing="false" onAction="#onAnmeldungButtonClick" text="Einloggen">
+                  <Button id="Login" fx:id="Login" mnemonicParsing="false" onAction="#onAnmeldungButtonClick" text="Einloggen">
                      <HBox.margin>
                         <Insets top="15.0" />
                      </HBox.margin>
