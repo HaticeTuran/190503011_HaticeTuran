@@ -25,7 +25,7 @@
             </HBox>
             <Pane prefHeight="38.0" prefWidth="145.0">
                <children>
-                  <Button fx:id="EditButton" layoutX="5.0" layoutY="7.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Edit Profil" />
+                  <Button fx:id="EditButton" layoutX="5.0" layoutY="7.0" mnemonicParsing="false" onAction="#switchToProfil" prefHeight="25.0" prefWidth="135.0" text="Edit Profil" />
                </children>
             </Pane>
             <Pane prefHeight="70.0" prefWidth="145.0">
