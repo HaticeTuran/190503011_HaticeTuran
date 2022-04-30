@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class page1Controller implements Initializable {
+public class page1Controller  {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -30,8 +30,8 @@ public class page1Controller implements Initializable {
 
     private String[] Aktionen = {"Schueler loeschen", "Schueler einfuegen", "Schueler listen"};
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    @FXML
+    public void initialize() {
         AktionChoise.getItems().addAll(Aktionen);
     }
 

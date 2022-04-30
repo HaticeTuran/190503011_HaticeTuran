@@ -36,10 +36,11 @@
             </Pane>
          </children>
       </VBox>
-      <HBox layoutX="145.0" prefHeight="42.0" prefWidth="455.0" style="-fx-background-color: #EF9393;">
+      <HBox layoutX="145.0" prefHeight="32.0" prefWidth="455.0" style="-fx-background-color: #EF9393;">
          <children>
-            <TextField prefHeight="42.0" prefWidth="455.0" />
+            <TextField prefHeight="35.0" prefWidth="455.0" />
          </children>
       </HBox>
+      <AnchorPane layoutX="145.0" layoutY="31.0" prefHeight="369.0" prefWidth="455.0" />
    </children>
 </AnchorPane>
