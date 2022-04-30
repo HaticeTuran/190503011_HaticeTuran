@@ -28,10 +28,11 @@
                   <Button fx:id="EditButton" layoutX="5.0" layoutY="7.0" mnemonicParsing="false" onAction="#switchToProfil" prefHeight="25.0" prefWidth="135.0" text="Edit Profil" />
                </children>
             </Pane>
-            <Pane prefHeight="70.0" prefWidth="145.0">
+            <Pane prefHeight="121.0" prefWidth="145.0">
                <children>
                   <ChoiceBox fx:id="AktionChoise" accessibleText="Aktion auswählen!" layoutX="5.0" layoutY="35.0" prefHeight="25.0" prefWidth="135.0" />
                   <Label layoutX="5.0" layoutY="6.0" prefHeight="17.0" prefWidth="135.0" text="Waehlen Sie die Aktion!" textFill="WHITE" />
+                  <Button fx:id="OK" layoutX="56.0" layoutY="82.0" mnemonicParsing="false" onAction="#switchAktion" text="OK" />
                </children>
             </Pane>
          </children>
@@ -41,6 +42,6 @@
             <TextField prefHeight="35.0" prefWidth="455.0" />
          </children>
       </HBox>
-      <AnchorPane layoutX="145.0" layoutY="31.0" prefHeight="369.0" prefWidth="455.0" />
+      <AnchorPane fx:id="screen" layoutX="145.0" layoutY="31.0" prefHeight="369.0" prefWidth="455.0" />
    </children>
 </AnchorPane>

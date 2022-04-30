@@ -10,8 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -24,6 +26,8 @@ public class page1Controller  {
     private Button EditButton;
     @FXML
     private  TextField myLabel;
+    @FXML
+    private Button OK;
 
     @FXML
     private ChoiceBox<String> AktionChoise;
@@ -42,5 +46,21 @@ public class page1Controller  {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    private AnchorPane screen;
+
+
+    public void switchAktion(ActionEvent event) throws IOException {
+        String act = (String) this.AktionChoise.getValue();
+        if(act.equals("Schueler loeschen")){
+            // do sth
+        }else if(act.equals("Schueler einfuegen")){
+            // do sth else
+        }else if(act.equals("Schueler listen")){
+            FXMLLoader sScreen = new FXMLLoader(HelloApplication.class.getResource("Aktion1.fxml"));
+            screen.getChildren().removeAll();
+            screen.getChildren().add(sScreen.load());
+        }
     }
 }
