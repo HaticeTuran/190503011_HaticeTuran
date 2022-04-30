@@ -36,7 +36,7 @@ public class page1Controller implements Initializable {
     }
 
     @FXML
-    public void switchToProfil(ActionEvent event) throws Exception {
+    public void switchToProfil (ActionEvent event) throws Exception {
         root = FXMLLoader.load(page1Controller.class.getResource("profil.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

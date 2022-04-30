@@ -43,7 +43,7 @@
                   <Label layoutX="27.0" layoutY="13.0" prefHeight="17.0" prefWidth="77.0" text="TC_Nummer:" />
                   <Label layoutX="104.0" layoutY="13.0" prefHeight="17.0" prefWidth="104.0" />
                   <Label layoutX="213.0" layoutY="13.0" text="Geburtsdatum:" />
-                  <Label layoutX="330.0" layoutY="13.0" prefHeight="17.0" prefWidth="97.0" />
+                  <Label layoutX="323.0" layoutY="13.0" prefHeight="17.0" prefWidth="110.0" />
                </children>
             </Pane>
             <Pane prefHeight="46.0" prefWidth="454.0" style="-fx-background-color: #ffffff;">
