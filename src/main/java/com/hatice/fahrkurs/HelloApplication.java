@@ -29,8 +29,11 @@ public class HelloApplication extends Application  {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Home");
         stage.setScene(scene);
+        stage.setResizable(false);
+        stage.centerOnScreen();
+        //stage.hide();
         stage.show();
-        //db database = new db();
+        //database = new db();
         //database.connect();
 
     }
