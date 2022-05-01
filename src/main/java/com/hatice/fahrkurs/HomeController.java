@@ -32,15 +32,21 @@ public class HomeController {
 
 
 
+
+
     @FXML
     public void onAnmeldungButtonClick(ActionEvent event) throws Exception{
         System.out.println(BenutzerName.getText());
+        if(db.containPersonal(BenutzerName.getText(),Passwort.getText())){
+            root = FXMLLoader.load(page1Controller.class.getResource("page1.fxml"));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            //hata mesajı
+        }
 
-        root = FXMLLoader.load(page1Controller.class.getResource("page1.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
 
         System.out.println("Hellooo");
 

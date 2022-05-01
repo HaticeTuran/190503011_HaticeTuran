@@ -33,8 +33,8 @@ public class HelloApplication extends Application  {
         stage.centerOnScreen();
         //stage.hide();
         stage.show();
-        //database = new db();
-        //database.connect();
+        db database = new db();
+        database.connect();
 
     }
 

@@ -9,7 +9,7 @@ public class db {
     public  static Connection conn = null;
     public static Statement stmt;
 
-    public void connect() {
+    public static void connect() {
         try {
             // db parameters
             String url = "jdbc:sqlite:C:\\Users\\Acer\\IdeaProjects\\FahrKurs\\src\\main\\java\\com\\hatice\\fahrkurs\\FahrKurs.db";
@@ -33,9 +33,10 @@ public class db {
         ResultSet res = stmt.executeQuery("SELECT * FROM FahrSchueler");
         return res;
     }*/
-    public Boolean containPersonal(String userName, String pass){
-        this.connect();
+    public static Boolean containPersonal(String userName, String pass){
+        //this.connect();
         try {
+            Statement stmt = conn.createStatement();
             ResultSet res = stmt.executeQuery("SELECT BenutzerName , Passwort FROM Personal");
             while (res.next()){
                 String s1 = res.getString("BenutzerName");
