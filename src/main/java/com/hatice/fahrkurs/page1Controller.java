@@ -55,11 +55,14 @@ public class page1Controller  {
         String act = (String) this.AktionChoise.getValue();
         if(act.equals("Schueler loeschen")){
             // do sth
+            screen.getChildren().removeAll();
+            FXMLLoader sScreen = new FXMLLoader(HelloApplication.class.getResource("Aktion2.fxml"));
+            screen.getChildren().add(sScreen.load());
         }else if(act.equals("Schueler einfuegen")){
             // do sth else
         }else if(act.equals("Schueler listen")){
-            FXMLLoader sScreen = new FXMLLoader(HelloApplication.class.getResource("Aktion1.fxml"));
             screen.getChildren().removeAll();
+            FXMLLoader sScreen = new FXMLLoader(HelloApplication.class.getResource("Aktion1.fxml"));
             screen.getChildren().add(sScreen.load());
         }
     }

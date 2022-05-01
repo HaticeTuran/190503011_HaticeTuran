@@ -1,4 +1,7 @@
 package com.hatice.fahrkurs;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -51,7 +54,24 @@ public class db {
             System.out.println(e);
         }
         return false;
+    }
+    public static ObservableList<Fahrschueler> listSchueler(){
+        ObservableList<Fahrschueler> arr = FXCollections.observableArrayList();
 
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT TC, Name, Nachname,  FROM Person, FahrSchueler WHERE Person.TC == FahrSchueler.TC_No");
+            while (res.next()){
+                String s1 = res.getString("TC");
+                String s2 = res.getString("Name");
+                String s3 = res.getString("Nachname");
+                Fahrschueler f = new Fahrschueler(s1,s2,s3);
+                arr.add(f);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return arr;
     }
 
 

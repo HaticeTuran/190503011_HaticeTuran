@@ -8,6 +8,9 @@ public class Fahrschueler extends Person{
     public Fahrschueler(String Tc) {
         super(Tc);
     }
+    public Fahrschueler(String Tc, String n, String nn){
+        super(Tc,n,nn);
+    }
 
     public int getSchuelerNummer() {
         return SchuelerNummer;

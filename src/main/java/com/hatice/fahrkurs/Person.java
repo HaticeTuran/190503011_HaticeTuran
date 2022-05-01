@@ -15,6 +15,11 @@ public class Person {
     public Person(String Tc){
         this.TC_Nummer = Tc;
     }
+    public Person(String Tc, String n, String nn){
+        this.TC_Nummer = Tc;
+        this.Name = n;
+        this.NachName = nn;
+    }
 
     public Person(String name, String nachName, String TC_Nummer, Date geburtsdatum, String geschlecht, String adresse, String mailAdresse, int telefonNummer) {
         Name = name;
