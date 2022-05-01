@@ -2,10 +2,12 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -71,6 +73,11 @@
                   </Button>
                </children>
             </HBox>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="errMsg" layoutX="63.0" layoutY="32.0" prefHeight="17.0" prefWidth="167.0" textFill="#f20606" />
+               </children>
+            </AnchorPane>
          </children>
       </VBox>
    </children>

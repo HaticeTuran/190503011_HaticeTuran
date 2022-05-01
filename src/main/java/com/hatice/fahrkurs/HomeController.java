@@ -30,8 +30,8 @@ public class HomeController {
     @FXML
     private PasswordField Passwort;
 
-
-
+    @FXML
+    private Label errMsg;
 
 
     @FXML
@@ -44,9 +44,8 @@ public class HomeController {
             stage.setScene(scene);
             stage.show();
         }else{
-            //hata mesajı
+            errMsg.setText("Falsche Eingabe!");
         }
-
 
         System.out.println("Hellooo");
 

@@ -33,6 +33,7 @@ public class db {
         ResultSet res = stmt.executeQuery("SELECT * FROM FahrSchueler");
         return res;
     }*/
+
     public static Boolean containPersonal(String userName, String pass){
         //this.connect();
         try {
