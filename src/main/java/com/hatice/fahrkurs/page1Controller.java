@@ -52,18 +52,22 @@ public class page1Controller  {
 
 
     public void switchAktion(ActionEvent event) throws IOException {
-        String act = (String) this.AktionChoise.getValue();
+        //String act = (String) this.AktionChoise.getValue();
+        String act = (String) this.AktionChoise.getSelectionModel().getSelectedItem();
+
+        FXMLLoader sScreen = new FXMLLoader(HelloApplication.class.getResource("Aktion2.fxml"));
+
+        FXMLLoader sScreen2 = new FXMLLoader(HelloApplication.class.getResource("Aktion1.fxml"));
+        //screen.getChildren().removeAll();
+        screen.getChildren().clear();
+        System.out.println(screen.getChildren());
+
         if(act.equals("Schueler loeschen")){
-            // do sth
-            screen.getChildren().removeAll();
-            FXMLLoader sScreen = new FXMLLoader(HelloApplication.class.getResource("Aktion2.fxml"));
             screen.getChildren().add(sScreen.load());
         }else if(act.equals("Schueler einfuegen")){
             // do sth else
         }else if(act.equals("Schueler listen")){
-            screen.getChildren().removeAll();
-            FXMLLoader sScreen = new FXMLLoader(HelloApplication.class.getResource("Aktion1.fxml"));
-            screen.getChildren().add(sScreen.load());
+            screen.getChildren().add(sScreen2.load());
         }
     }
 }
