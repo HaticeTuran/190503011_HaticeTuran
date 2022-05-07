@@ -59,10 +59,10 @@ public class db {
         ObservableList<Fahrschueler> arr = FXCollections.observableArrayList();
 
         try {
-            Statement stmt = conn.createStatement();
-            ResultSet res = stmt.executeQuery("SELECT TC, Name, Nachname,  FROM Person, FahrSchueler WHERE Person.TC == FahrSchueler.TC_No");
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT FahrSchueler.TC_No, Person.Name, Person.Nachname  FROM Person, FahrSchueler WHERE Person.TC == FahrSchueler.TC_No");
             while (res.next()){
-                String s1 = res.getString("TC");
+                String s1 = res.getString("TC_No");
                 String s2 = res.getString("Name");
                 String s3 = res.getString("Nachname");
                 Fahrschueler f = new Fahrschueler(s1,s2,s3);
@@ -73,6 +73,20 @@ public class db {
         }
         return arr;
     }
+
+    public static void deleteSchueler(String TC){
+        try{
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("DELETE FROM FahrSchueler WHERE FahrSchueler.TC_No="+TC);
+            stmt.executeUpdate("DELETE FROM Person WHERE Person.TC="+TC);
+        }catch (Exception E){
+            System.out.println(E);
+        }
+    }
+
+    /*public static String(){
+
+    }*/
 
 
 

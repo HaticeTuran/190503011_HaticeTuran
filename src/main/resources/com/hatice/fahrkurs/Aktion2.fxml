@@ -10,7 +10,7 @@
    <children>
       <Label layoutX="39.0" layoutY="69.0" prefHeight="17.0" prefWidth="298.0" text="Geben Sie TC Nummer um ein Schueler zu loeschen." />
       <Pane prefHeight="42.0" prefWidth="438.0" style="-fx-background-color: #DD2E44;" />
-      <TextField layoutX="39.0" layoutY="111.0" prefHeight="25.0" prefWidth="214.0" promptText="TC Nummer" />
-      <Button layoutX="269.0" layoutY="111.0" mnemonicParsing="false" text="Delete" />
+      <TextField fx:id="tc" layoutX="39.0" layoutY="111.0" prefHeight="25.0" prefWidth="214.0" promptText="TC Nummer" />
+      <Button fx:id="delete" layoutX="269.0" layoutY="111.0" mnemonicParsing="false" onAction="#DeleteSchueler" text="Delete" />
    </children>
 </AnchorPane>

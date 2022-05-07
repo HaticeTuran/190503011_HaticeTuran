@@ -44,7 +44,7 @@ public class HomeController {
             stage.setScene(scene);
             stage.show();
         }else{
-            errMsg.setText("Falsche Eingabe!");
+            errMsg.setText("Benutzername oder Passwort wird falsch gegeben!");
         }
 
         System.out.println("Hellooo");

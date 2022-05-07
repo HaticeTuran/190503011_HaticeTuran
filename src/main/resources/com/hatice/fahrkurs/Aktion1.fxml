@@ -10,7 +10,7 @@
    <children>
       <Pane layoutY="-6.0" prefHeight="40.0" prefWidth="449.0" style="-fx-background-color: #DD2E44;">
          <children>
-            <Button layoutY="8.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Zurueck" textFill="WHITE" />
+            <Button layoutY="8.0" mnemonicParsing="false" style="-fx-background-color: transparent;" textFill="WHITE" />
          </children>
       </Pane>
       <Pane layoutY="34.0" prefHeight="336.0" prefWidth="58.0" style="-fx-background-color: #DD2E44;" />
@@ -18,12 +18,12 @@
          <children>
             <TableView fx:id="SchuelerList" layoutX="33.0" layoutY="41.0" prefHeight="255.0" prefWidth="306.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="TC" />
-                <TableColumn prefWidth="75.0" text="Name" />
-                  <TableColumn prefWidth="75.0" text="Nachname" />
+                <TableColumn fx:id="TC" prefWidth="75.0" text="TC" />
+                <TableColumn fx:id="Name" prefWidth="75.0" text="Name" />
+                  <TableColumn fx:id="Nachname" prefWidth="75.0" text="Nachname" />
               </columns>
             </TableView>
-            <Button fx:id="show" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" text="Show List" />
+            <Button fx:id="show" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#List" text="Show List" />
          </children>
       </AnchorPane>
    </children>

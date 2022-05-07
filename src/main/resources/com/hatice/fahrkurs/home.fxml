@@ -75,7 +75,7 @@
             </HBox>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="errMsg" layoutX="63.0" layoutY="32.0" prefHeight="17.0" prefWidth="167.0" textFill="#f20606" />
+                  <Label fx:id="errMsg" layoutX="14.0" layoutY="14.0" prefHeight="36.0" prefWidth="309.0" textFill="#f20606" />
                </children>
             </AnchorPane>
          </children>

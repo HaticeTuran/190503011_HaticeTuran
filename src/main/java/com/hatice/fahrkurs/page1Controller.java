@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -25,7 +26,8 @@ public class page1Controller  {
     @FXML
     private Button EditButton;
     @FXML
-    private  TextField myLabel;
+    private Label myLabel;
+
     @FXML
     private Button OK;
 

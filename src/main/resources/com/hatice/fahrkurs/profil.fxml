@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hatice.fahrkurs.ProfilController">
    <children>
       <VBox layoutX="-3.0" prefHeight="400.0" prefWidth="150.0" style="-fx-background-color: #DD2E44;">
@@ -46,9 +45,9 @@
             <Pane prefHeight="42.0" prefWidth="454.0" style="-fx-background-color: #EF9393;">
                <children>
                   <Label layoutX="14.0" layoutY="13.0" prefHeight="17.0" prefWidth="83.0" text="BenutzerName" />
-                  <Label layoutX="98.0" layoutY="13.0" prefHeight="17.0" prefWidth="110.0" style="-fx-background-color: #ffffff;" />
                   <Label layoutX="227.0" layoutY="13.0" text="Passwort" />
-                  <Label layoutX="287.0" layoutY="13.0" prefHeight="17.0" prefWidth="110.0" style="-fx-background-color: #ffffff;" />
+                  <TextField layoutX="97.0" layoutY="9.0" prefHeight="25.0" prefWidth="110.0" />
+                  <TextField layoutX="284.0" layoutY="9.0" prefHeight="25.0" prefWidth="110.0" />
                </children>
             </Pane>
             <Pane prefHeight="46.0" prefWidth="454.0" style="-fx-background-color: #ffffff;">
