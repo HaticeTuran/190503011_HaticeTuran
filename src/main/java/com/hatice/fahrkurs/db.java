@@ -65,8 +65,9 @@ public class db {
                 String s1 = res.getString("TC_No");
                 String s2 = res.getString("Name");
                 String s3 = res.getString("Nachname");
-                Fahrschueler f = new Fahrschueler(s1,s2,s3);
-                arr.add(f);
+                //Fahrschueler f = new Fahrschueler(s1,s2,s3);
+                //arr.add(f);
+                arr.add(new Fahrschueler(s1,s2,s3));
             }
         }catch (Exception e){
             System.out.println(e);
