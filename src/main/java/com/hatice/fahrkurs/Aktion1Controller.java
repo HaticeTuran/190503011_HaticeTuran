@@ -47,5 +47,4 @@ public class Aktion1Controller implements Initializable {
         }*/
     }
 
-
 }
