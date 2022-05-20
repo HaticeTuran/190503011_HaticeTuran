@@ -33,6 +33,7 @@ public class Aktion1Controller implements Initializable {
     @FXML
     private Button show;
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
         this.List();
