@@ -72,4 +72,7 @@ public class page1Controller  {
             screen.getChildren().add(sScreen2.load());
         }
     }
+    public void setUserName(String s){
+        myLabel.setText(s);
+    }
 }

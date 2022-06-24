@@ -47,7 +47,14 @@
             </HBox>
             <HBox prefHeight="50.0" prefWidth="324.0">
                <children>
-                  <Pane prefHeight="49.0" prefWidth="56.0" />
+                  <Pane prefHeight="49.0" prefWidth="56.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="11.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/user.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                   <TextField id="BenutzerName" fx:id="BenutzerName" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="191.0" promptText="Benutzer Name">
                      <HBox.margin>
                         <Insets top="15.0" />
@@ -60,7 +67,14 @@
             </HBox>
             <HBox prefHeight="52.0" prefWidth="324.0">
                <children>
-                  <Pane prefHeight="24.0" prefWidth="58.0" />
+                  <Pane prefHeight="24.0" prefWidth="58.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="35.0" layoutX="12.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/password.png" />
+                           </image>
+                        </ImageView>
+                     </children></Pane>
                   <PasswordField fx:id="Passwort" prefHeight="25.0" prefWidth="132.0">
                      <HBox.margin>
                         <Insets top="15.0" />

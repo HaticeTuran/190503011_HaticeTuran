@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hatice.fahrkurs.page1Controller">
    <children>
-      <VBox prefHeight="400.0" prefWidth="145.0" style="-fx-background-color: #DD2E44;">
+      <VBox prefHeight="401.0" prefWidth="145.0" style="-fx-background-color: #DD2E44;">
          <children>
             <HBox prefHeight="134.0" prefWidth="145.0">
                <children>
@@ -27,11 +27,18 @@
                   <Button fx:id="EditButton" layoutX="5.0" layoutY="7.0" mnemonicParsing="false" onAction="#switchToProfil" prefHeight="25.0" prefWidth="135.0" text="Edit Profil" />
                </children>
             </Pane>
-            <Pane prefHeight="121.0" prefWidth="145.0">
+            <Pane prefHeight="102.0" prefWidth="145.0">
                <children>
                   <ChoiceBox fx:id="AktionChoise" accessibleText="Aktion auswählen!" layoutX="5.0" layoutY="35.0" prefHeight="25.0" prefWidth="135.0" />
-                  <Label layoutX="5.0" layoutY="6.0" prefHeight="17.0" prefWidth="135.0" text="Waehlen Sie die Aktion!" textFill="WHITE" />
-                  <Button fx:id="OK" layoutX="56.0" layoutY="82.0" mnemonicParsing="false" onAction="#switchAktion" text="OK" />
+                  <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="135.0" text="Studentoperationen" textFill="WHITE" />
+                  <Button fx:id="OK" layoutX="107.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchAktion" text="OK" />
+               </children>
+            </Pane>
+            <Pane prefHeight="123.0" prefWidth="145.0">
+               <children>
+                  <Label layoutX="17.0" layoutY="14.0" text="Benutzeroperationen" textFill="#f8f6f6" />
+                  <ChoiceBox layoutX="5.0" layoutY="43.0" prefHeight="25.0" prefWidth="135.0" />
+                  <Button layoutX="107.0" layoutY="75.0" mnemonicParsing="false" text="OK" />
                </children>
             </Pane>
          </children>
