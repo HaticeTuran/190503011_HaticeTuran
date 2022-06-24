@@ -39,6 +39,7 @@ public class Aktion1Controller implements Initializable {
         this.List();
     }
 
+
     public void List( ){
         ObservableList arr = db.listSchueler();
         SchuelerList.setItems(arr);
