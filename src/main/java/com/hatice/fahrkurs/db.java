@@ -1,6 +1,8 @@
 package com.hatice.fahrkurs;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 
 import java.io.IOException;
 import java.sql.*;
@@ -31,12 +33,19 @@ public class db {
         }
     }
 
-    /*public ResultSet ListSchueler(){
-        this.connect();
-        ResultSet res = stmt.executeQuery("SELECT * FROM FahrSchueler");
+    /*public static ResultSet ListSchueler(){
+        //this.connect();
+        ResultSet res;
+        try{
+            res = stmt.executeQuery("SELECT * FROM FahrSchueler");
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
         return res;
     }*/
 
+    // Kontroliere, on eine solche Personal in db gibt
     public static Boolean containPersonal(String userName, String pass){
         //this.connect();
         try {
@@ -55,6 +64,8 @@ public class db {
         }
         return false;
     }
+
+    // Lİst of students
     public static ObservableList<Fahrschueler> listSchueler(){
         ObservableList<Fahrschueler> arr = FXCollections.observableArrayList();
 
@@ -75,6 +86,7 @@ public class db {
         return arr;
     }
 
+    // Schueler löschen
     public static void deleteSchueler(String TC){
         try{
             Statement stmt = conn.createStatement();
@@ -84,11 +96,62 @@ public class db {
             System.out.println(E);
         }
     }
-
-    /*public static String(){
-
-    }*/
+    //Schueler einfügen
 
 
+    public static Boolean addSchueler(String tc,String name, String nname, String GDatum,int KursId,String blutt,String L_id){
+        if(!db.containSchueler(tc)){
+            System.out.println(GDatum);
+            String s1 = "INSERT INTO Person (TC,Name,Nachname,Geburtsdatum) VALUES('"+tc+"','"+name+"','"+nname+"','" + GDatum + "');";
+            String s2 = "INSERT INTO FahrSchueler (Kurs_id,Blutgruppe,Lehrer_id,TC_No) VALUES("+KursId+",'"+blutt+"','"+L_id+"','"+tc+"');";
+            System.out.println(s1);
+            System.out.println(s2);
+
+            try {
+                stmt.executeUpdate(s1);
+                stmt.executeUpdate(s2);
+            }catch (Exception e){
+                System.out.println(e);
+            }
+            return true;
+        }else{
+            return false;
+
+        }
+
+    }
+
+    // List of courses id
+    public static ArrayList<Integer> getKursesID(){
+        ArrayList<Integer> arr = new ArrayList<>();
+        try {
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT Kurs_id FROM Kurs");
+            while (res.next()){
+                int s1 = res.getInt("Kurs_id");
+                arr.add(s1);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return arr;
+    }
+    // Kontrolle, ob eine solche Student gibt
+    public static Boolean containSchueler(String TC){
+        //this.connect();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT TC_No FROM FahrSchueler");
+            while (res.next()){
+                String s1 = res.getString("TC_No");
+                if(s1.equals(TC)){
+                    return true;
+                }
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return false;
+    }
 
 }

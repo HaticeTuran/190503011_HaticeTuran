@@ -35,6 +35,8 @@ public class HelloApplication extends Application  {
         stage.show();
         db database = new db();
         database.connect();
+        System.out.println(db.getKursesID());
+
 
     }
 

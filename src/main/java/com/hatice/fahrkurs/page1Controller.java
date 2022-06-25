@@ -67,19 +67,33 @@ public class page1Controller  {
         String act = (String) this.AktionChoise.getSelectionModel().getSelectedItem();
 
         FXMLLoader sScreen = new FXMLLoader(HelloApplication.class.getResource("Aktion2.fxml"));
-
+        FXMLLoader sScreen3 = new FXMLLoader(HelloApplication.class.getResource("Aktion3.fxml"));
         FXMLLoader sScreen2 = new FXMLLoader(HelloApplication.class.getResource("Aktion1.fxml"));
         //screen.getChildren().removeAll();
         screen.getChildren().clear();
-        System.out.println(screen.getChildren());
+        //System.out.println(screen.getChildren());
+        switch (act){
+            case "Schueler loeschen":
+                screen.getChildren().add(sScreen.load());
+                break;
+            case "Schueler einfuegen":
+                screen.getChildren().add(sScreen3.load());
+                break;
+            case     "Schueler listen":
+                screen.getChildren().add(sScreen2.load());
+                break;
+            default:
+                System.out.println("No matching");
+        }
 
+/*
         if(act.equals("Schueler loeschen")){
             screen.getChildren().add(sScreen.load());
         }else if(act.equals("Schueler einfuegen")){
-            // do sth else
+            screen.getChildren().add(sScreen3.load());
         }else if(act.equals("Schueler listen")){
             screen.getChildren().add(sScreen2.load());
-        }
+        }*/
     }
     public void setUserName(String s){
         myLabel.setText(s);
