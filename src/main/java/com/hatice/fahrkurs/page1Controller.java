@@ -7,10 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -25,11 +22,15 @@ public class page1Controller  {
 
     @FXML
     private Button EditButton;
+
     @FXML
     private Label myLabel;
 
     @FXML
     private Button OK;
+
+    @FXML
+    private Button logout;
 
     @FXML
     private ChoiceBox<String> AktionChoise;
@@ -43,7 +44,15 @@ public class page1Controller  {
 
     @FXML
     public void switchToProfil (ActionEvent event) throws Exception {
+        String name= myLabel.getText();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("profil.fxml"));
+
         root = FXMLLoader.load(page1Controller.class.getResource("profil.fxml"));
+
+        root= loader.load();
+        ProfilController profilController = loader.getController();
+        profilController.setUserName(name);
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -74,5 +83,21 @@ public class page1Controller  {
     }
     public void setUserName(String s){
         myLabel.setText(s);
+    }
+
+    public void logout(ActionEvent event) throws Exception{
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("logout");
+        alert.setHeaderText("Sie sind dabei, sich abzumelden!");
+        alert.setContentText("Möchten Sie vor dem Beenden speichern?");
+         if(alert.showAndWait().get() == ButtonType.OK){
+             root = FXMLLoader.load(page1Controller.class.getResource("home.fxml"));
+
+             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+             scene = new Scene(root);
+             stage.setScene(scene);
+             stage.show();
+         }
     }
 }

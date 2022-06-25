@@ -31,17 +31,10 @@
          <children>
             <HBox prefHeight="36.0" prefWidth="336.0">
                <children>
-                  <Button mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: transparent;">
+                  <Button mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="30.0" style="-fx-background-color: transparent;">
                      <HBox.margin>
                         <Insets left="290.0" top="5.0" />
                      </HBox.margin>
-                     <graphic>
-                        <ImageView fitHeight="28.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="C:\Users\Acer\IdeaProjects\FahrKurs\src\main\resources\com\hatice\fahrkurs\img\x.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
                   </Button>
                </children>
             </HBox>

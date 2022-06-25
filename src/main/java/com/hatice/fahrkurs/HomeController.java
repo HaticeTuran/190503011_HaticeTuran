@@ -33,13 +33,11 @@ public class HomeController {
     @FXML
     private Label errMsg;
 
-
     @FXML
     public void onAnmeldungButtonClick(ActionEvent event) throws Exception{
         //System.out.println(BenutzerName.getText());
         String name= BenutzerName.getText();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("page1.fxml"));
-
 
         if(db.containPersonal(BenutzerName.getText(),Passwort.getText())){
             root = FXMLLoader.load(page1Controller.class.getResource("page1.fxml"));
@@ -54,6 +52,5 @@ public class HomeController {
             errMsg.setText("Benutzername oder Passwort wird falsch gegeben!");
         }
     }
-
 
 }

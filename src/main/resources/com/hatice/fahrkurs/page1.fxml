@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -15,9 +17,20 @@
          <children>
             <HBox prefHeight="134.0" prefWidth="145.0">
                <children>
-                  <AnchorPane prefHeight="80.0" prefWidth="145.0">
+                  <AnchorPane prefHeight="119.0" prefWidth="145.0">
                      <children>
-                        <Label fx:id="myLabel" layoutX="5.0" layoutY="103.0" prefHeight="17.0" prefWidth="135.0" style="-fx-background-color: #ffffff;" />
+                        <Label fx:id="myLabel" layoutX="22.0" layoutY="70.0" prefHeight="17.0" prefWidth="104.0" style="-fx-background-color: #ffffff;" />
+                        <ImageView fitHeight="78.0" fitWidth="94.0" layoutX="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/user2.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="logout" layoutX="97.0" layoutY="97.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="32.0" />
+                        <ImageView fitHeight="25.0" fitWidth="24.0" layoutX="74.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/sign_out.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                </children>
@@ -27,18 +40,18 @@
                   <Button fx:id="EditButton" layoutX="5.0" layoutY="7.0" mnemonicParsing="false" onAction="#switchToProfil" prefHeight="25.0" prefWidth="135.0" text="Edit Profil" />
                </children>
             </Pane>
-            <Pane prefHeight="102.0" prefWidth="145.0">
+            <Pane prefHeight="85.0" prefWidth="145.0">
                <children>
-                  <ChoiceBox fx:id="AktionChoise" accessibleText="Aktion auswählen!" layoutX="5.0" layoutY="35.0" prefHeight="25.0" prefWidth="135.0" />
+                  <ChoiceBox fx:id="AktionChoise" accessibleText="Aktion auswählen!" layoutX="5.0" layoutY="23.0" prefHeight="25.0" prefWidth="135.0" />
                   <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="135.0" text="Studentoperationen" textFill="WHITE" />
-                  <Button fx:id="OK" layoutX="107.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchAktion" text="OK" />
+                  <Button fx:id="OK" layoutX="107.0" layoutY="56.0" mnemonicParsing="false" onAction="#switchAktion" text="OK" />
                </children>
             </Pane>
             <Pane prefHeight="123.0" prefWidth="145.0">
                <children>
-                  <Label layoutX="17.0" layoutY="14.0" text="Benutzeroperationen" textFill="#f8f6f6" />
-                  <ChoiceBox layoutX="5.0" layoutY="43.0" prefHeight="25.0" prefWidth="135.0" />
-                  <Button layoutX="107.0" layoutY="75.0" mnemonicParsing="false" text="OK" />
+                  <Label layoutX="17.0" layoutY="6.0" text="Benutzeroperationen" textFill="#f8f6f6" />
+                  <ChoiceBox layoutX="5.0" layoutY="23.0" prefHeight="25.0" prefWidth="135.0" />
+                  <Button layoutX="107.0" layoutY="55.0" mnemonicParsing="false" text="OK" />
                </children>
             </Pane>
          </children>

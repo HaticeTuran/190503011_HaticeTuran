@@ -23,7 +23,7 @@
                               <Image url="@img/left_arrow.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="zurueck" layoutX="25.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #ffffff;" text="Zurueck" />
+                        <Button fx:id="zurueck" layoutX="25.0" mnemonicParsing="false" onAction="#switchToPage1" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #ffffff;" text="Zurueck" />
                      </children>
                   </AnchorPane>
                </children>
@@ -31,7 +31,7 @@
             <Pane prefHeight="119.0" prefWidth="150.0" />
             <Pane prefHeight="52.0" prefWidth="150.0">
                <children>
-                  <Label layoutX="13.0" layoutY="18.0" prefHeight="17.0" prefWidth="125.0" text="Name Nachname" textFill="WHITE">
+                  <Label fx:id="UserName" layoutX="13.0" layoutY="18.0" prefHeight="17.0" prefWidth="125.0" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
