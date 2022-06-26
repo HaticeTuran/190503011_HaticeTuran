@@ -65,6 +65,31 @@ public class db {
         return false;
     }
 
+    //List of Personals
+    public static ObservableList<Personal> listPersonal(){
+        ObservableList<Personal> arr = FXCollections.observableArrayList();
+
+        try {
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT Person.Name, Person.NachName, Person.TC, Personal.BenutzerName, Personal.Personal_nummer,Personal.Rolle FROM Person, Personal WHERE Person.TC == Personal.TC");
+            while (res.next()){
+                String s = res.getString("Name");
+                String s1 = res.getString("NachName");
+                String s2 = res.getString("TC");
+                String s3 = res.getString("BenutzerName");
+                String s4 = res.getString("Personal_nummer");
+                String s5 = res.getString("Rolle");
+
+                arr.add(new Personal(s,s1,s2,s5,s3,s4));
+
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return arr;
+    }
+
+
     // Lİst of students
     public static ObservableList<Fahrschueler> listSchueler(){
         ObservableList<Fahrschueler> arr = FXCollections.observableArrayList();

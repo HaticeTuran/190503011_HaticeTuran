@@ -15,7 +15,7 @@ public class Fahrschueler extends Person{
     }
     public Fahrschueler(String Sno, String Tc, String n, String nn, String gd ) throws ParseException {
         super(Tc,n,nn,gd);
-        SchuelerNummer = Integer. parseInt(Sno);
+        SchuelerNummer = Integer.parseInt(Sno);
     }
 
     public int getSchuelerNummer() {

@@ -9,6 +9,12 @@ public class Personal extends Person{
         this.Benutzername = Benutzername;
         PersonalNummer = pn;
     }
+    public Personal(String n, String nn, String tc, String r,String bn, String pn){
+        super(tc,n,nn);
+        Rolle = r;
+        Benutzername = bn;
+        PersonalNummer = Integer.parseInt(pn);
+    }
     public Personal(String Tc){
         super(Tc);
     }

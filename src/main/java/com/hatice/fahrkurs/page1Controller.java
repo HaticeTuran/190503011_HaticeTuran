@@ -46,7 +46,7 @@ public class page1Controller  {
     @FXML
     private Button ChoiseOp;
 
-    private String[] Operations = {"Admin einfuegen", "Admin listen","Personal loeschen","Personal einfuegen","Personal listen"};
+    private String[] Operations = {"Admin einfuegen", "Personal listen","Personal loeschen","Personal einfuegen","Personal listen11"};
     @FXML
     public void initialize() {
         AktionChoise.getItems().addAll(Aktionen);
@@ -104,7 +104,7 @@ public class page1Controller  {
                 case "Admin einfuegen":
                     screen.getChildren().add(sScreen1.load());
                     break;
-                case"Admin listen":
+                case"Personal listen":
                     screen.getChildren().add(sScreen2.load());
                     break;
                 case "Personal loeschen":
@@ -113,7 +113,7 @@ public class page1Controller  {
                 case"Personal einfuegen":
                     screen.getChildren().add(sScreen4.load());
                     break;
-                case "Personal listen":
+                case "Personal listenn":
                     screen.getChildren().add(sScreen5.load());
                     break;
                 default:

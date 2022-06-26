@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.hatice.fahrkurs.Operation2Controller"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="369.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hatice.fahrkurs.Operation2Controller">
+   <children>
+      <AnchorPane prefHeight="44.0" prefWidth="455.0" style="-fx-background-color: #DD2E44;">
+         <children>
+            <Label layoutX="37.0" layoutY="14.0" prefHeight="21.0" prefWidth="109.0" style="-fx-background-color: #ffffff;" text=" Personal listen">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="Personal" layoutX="11.0" layoutY="51.0" prefHeight="304.0" prefWidth="433.0">
+        <columns>
+            <TableColumn fx:id="TC" prefWidth="100.0" text="TC" />
+          <TableColumn fx:id="Name" prefWidth="90.0" text="Name" />
+            <TableColumn fx:id="Nachname" prefWidth="90.0" text="Nachname" />
+          <TableColumn fx:id="Rolle" prefWidth="65.0" text="Rolle" />
+            <TableColumn fx:id="PersonalNo" prefWidth="90.0" text="PersonalNo" />
+        </columns>
+      </TableView>
+   </children>
 </AnchorPane>

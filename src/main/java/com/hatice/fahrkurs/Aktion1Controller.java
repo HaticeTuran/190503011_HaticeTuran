@@ -43,9 +43,9 @@ public class Aktion1Controller implements Initializable {
     private Button show;
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle){
+
         Name.setCellValueFactory(new PropertyValueFactory<Fahrschueler,String>("Name"));
         Nachname.setCellValueFactory(new PropertyValueFactory<Fahrschueler,String>("NachName"));
         TC.setCellValueFactory(new PropertyValueFactory<Fahrschueler,String>("TC_Nummer"));
