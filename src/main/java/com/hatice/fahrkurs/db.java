@@ -149,6 +149,28 @@ public class db {
         }
         return arr;
     }
+    // Loeschen einer Personal
+    public static Boolean addPersonal(String tc,String n, String nn,String gb, String bn,String pass){
+        if(!db.containPersonal(bn,pass)){
+            //System.out.println(GDatum);
+            String s1 = "INSERT INTO Person (TC,Name,Nachname,Geburtsdatum) VALUES('"+tc+"','"+n+"','"+nn+"','" + gb + "');";
+            String s2 = "INSERT INTO Personal (TC,BenutzerName,Passwort) VALUES("+tc+",'"+bn+"','"+pass+"');";
+            /*System.out.println(s1);
+            System.out.println(s2);*/
+
+            try {
+                stmt.executeUpdate(s1);
+                stmt.executeUpdate(s2);
+            }catch (Exception e){
+                System.out.println(e);
+            }
+            return true;
+        }else{
+            return false;
+
+        }
+
+    }
 
     // List of courses id
     public static ArrayList<Integer> getKursesID(){

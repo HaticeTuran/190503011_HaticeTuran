@@ -122,8 +122,6 @@ public class page1Controller  {
         }catch (Exception e){
             System.out.println(e);
         }
-
-
     }
 
     // Switch Aktion Seite fuer Schuler
@@ -150,7 +148,6 @@ public class page1Controller  {
             default:
                 System.out.println("No matching");
         }
-
     }
     public void setUserName(String s){
         myLabel.setText(s);
@@ -161,7 +158,7 @@ public class page1Controller  {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("logout");
         alert.setHeaderText("Sie sind dabei, sich abzumelden!");
-        alert.setContentText("Möchten Sie vor dem Beenden speichern?");
+        alert.setContentText("Möchten Sie sich wirklich abmelden?");
          if(alert.showAndWait().get() == ButtonType.OK){
              root = FXMLLoader.load(page1Controller.class.getResource("home.fxml"));
 

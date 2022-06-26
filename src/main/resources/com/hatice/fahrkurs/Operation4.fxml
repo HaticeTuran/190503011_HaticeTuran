@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.hatice.fahrkurs.Operation4Controller"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="369.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hatice.fahrkurs.Operation4Controller">
+   <children>
+      <AnchorPane layoutY="-6.0" prefHeight="59.0" prefWidth="455.0" style="-fx-background-color: #DD2E44;">
+         <children>
+            <Label layoutX="23.0" layoutY="15.0" prefHeight="27.0" prefWidth="135.0" style="-fx-background-color: #ffffff;" text=" Personal einfuegen">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="26.0" layoutY="62.0" prefHeight="17.0" prefWidth="400.0" text="Füllen Sie die Felder unten aus, um neue Personal hinzuzufügen!" />
+      <TextField fx:id="TC" layoutX="14.0" layoutY="93.0" prefHeight="25.0" prefWidth="123.0" promptText="TC" />
+      <TextField fx:id="Name" layoutX="165.0" layoutY="93.0" prefHeight="25.0" prefWidth="123.0" promptText="Name" />
+      <TextField fx:id="NName" layoutX="318.0" layoutY="93.0" prefHeight="25.0" prefWidth="123.0" promptText="Nachname" />
+      <TextField fx:id="GDatum" layoutX="14.0" layoutY="140.0" prefHeight="25.0" prefWidth="123.0" promptText="Geburtsdatum" />
+      <TextField fx:id="BName" layoutX="165.0" layoutY="140.0" prefHeight="25.0" prefWidth="123.0" promptText="Benutzername" />
+      <PasswordField fx:id="Pass" layoutX="318.0" layoutY="140.0" prefHeight="25.0" prefWidth="123.0" promptText="Passwort" />
+      <Button fx:id="add" layoutX="403.0" layoutY="185.0" mnemonicParsing="false" onAction="#addPersonal" text="Add" />
+      <Label fx:id="errMsg" layoutX="15.0" layoutY="177.0" prefHeight="17.0" prefWidth="272.0" />
+   </children>
 </AnchorPane>
