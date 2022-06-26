@@ -101,11 +101,11 @@ public class db {
 
     public static Boolean addSchueler(String tc,String name, String nname, String GDatum,int KursId,String blutt,String L_id){
         if(!db.containSchueler(tc)){
-            System.out.println(GDatum);
+            //System.out.println(GDatum);
             String s1 = "INSERT INTO Person (TC,Name,Nachname,Geburtsdatum) VALUES('"+tc+"','"+name+"','"+nname+"','" + GDatum + "');";
             String s2 = "INSERT INTO FahrSchueler (Kurs_id,Blutgruppe,Lehrer_id,TC_No) VALUES("+KursId+",'"+blutt+"','"+L_id+"','"+tc+"');";
-            System.out.println(s1);
-            System.out.println(s2);
+            /*System.out.println(s1);
+            System.out.println(s2);*/
 
             try {
                 stmt.executeUpdate(s1);
@@ -145,6 +145,24 @@ public class db {
             while (res.next()){
                 String s1 = res.getString("TC_No");
                 if(s1.equals(TC)){
+                    return true;
+                }
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return false;
+    }
+
+    // Kontrolle, ob eine solche Admin gibt
+    public static Boolean containAdmin(String Benutzername){
+        //this.connect();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT Rolle FROM Personal WHERE Personal.BenutzerName =="+Benutzername);
+            while (res.next()){
+                String s2 = res.getString("Rolle");
+                if(s2.equals("Admin")){
                     return true;
                 }
             }

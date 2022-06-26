@@ -18,26 +18,32 @@
                <children>
                   <AnchorPane layoutX="9.0" layoutY="5.0" prefHeight="25.0" prefWidth="46.0">
                      <children>
-                        <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@img/left_arrow.png" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="zurueck" layoutX="25.0" mnemonicParsing="false" onAction="#switchToPage1" prefHeight="25.0" prefWidth="64.0" style="-fx-background-color: #ffffff;" text="Zurueck" />
+                        <Button fx:id="zurueck" mnemonicParsing="false" onAction="#switchToPage1" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #DD2E44;">
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/left_arrow.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
                      </children>
                   </AnchorPane>
                </children>
             </Pane>
-            <Pane prefHeight="119.0" prefWidth="150.0" />
-            <Pane prefHeight="52.0" prefWidth="150.0">
+            <Pane prefHeight="119.0" prefWidth="150.0">
                <children>
-                  <Label fx:id="UserName" layoutX="13.0" layoutY="18.0" prefHeight="17.0" prefWidth="125.0" textFill="WHITE">
+                  <ImageView fitHeight="99.0" fitWidth="105.0" layoutX="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/user2.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="UserName" layoutX="15.0" layoutY="90.0" prefHeight="17.0" prefWidth="125.0" textFill="WHITE">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-               </children>
-            </Pane>
+               </children></Pane>
+            <Pane prefHeight="52.0" prefWidth="150.0" />
          </children>
       </VBox>
       <VBox layoutX="147.0" layoutY="-1.0" prefHeight="400.0" prefWidth="454.0">
