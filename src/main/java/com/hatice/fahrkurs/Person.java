@@ -1,5 +1,7 @@
 package com.hatice.fahrkurs;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Person {
@@ -14,6 +16,13 @@ public class Person {
 
     public Person(String Tc){
         this.TC_Nummer = Tc;
+    }
+
+    public Person(String Tc,String n, String nn, String gd) throws ParseException {
+        TC_Nummer = Tc;
+        NachName = nn;
+        Name = n;
+        Geburtsdatum = new SimpleDateFormat("dd.MM.yyyy").parse(gd);
     }
     public Person(String Tc, String n, String nn){
         this.TC_Nummer = Tc;

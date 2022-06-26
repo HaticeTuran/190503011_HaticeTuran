@@ -33,13 +33,24 @@ public class page1Controller  {
     private Button logout;
 
     @FXML
+    private AnchorPane screen;
+
+    @FXML
     private ChoiceBox<String> AktionChoise;
 
     private String[] Aktionen = {"Schueler loeschen", "Schueler einfuegen", "Schueler listen"};
 
     @FXML
+    private ChoiceBox<String> UserChoise;
+
+    @FXML
+    private Button ChoiseOp;
+
+    private String[] Operations = {"Admin einfuegen", "Admin listen","Personal loeschen","Personal einfuegen","Personal listen"};
+    @FXML
     public void initialize() {
         AktionChoise.getItems().addAll(Aktionen);
+        UserChoise.getItems().addAll(Operations);
     }
 
     @FXML
@@ -58,10 +69,64 @@ public class page1Controller  {
         stage.setScene(scene);
         stage.show();
     }
-    @FXML
-    private AnchorPane screen;
 
 
+
+    //Switch Aktion Seite fuer Personal
+    public void switchAdminSeite() throws IOException {
+        System.out.println(myLabel.getText());
+        if(db.containAdmin(myLabel.getText())){
+            selectOp();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ungueltige Operation!");
+            alert.setHeaderText("Sie sind keine Adminuser!");
+            alert.setContentText("Wenden Sie sich dazu an den Administrator!");
+            if(alert.showAndWait().get() == ButtonType.OK){
+                //
+            }
+        }
+    }
+    public void selectOp() throws IOException {
+        String act = (String) this.UserChoise.getSelectionModel().getSelectedItem();
+
+        FXMLLoader sScreen1 = new FXMLLoader(HelloApplication.class.getResource("Operation1.fxml"));
+        FXMLLoader sScreen2 = new FXMLLoader(HelloApplication.class.getResource("Operation2.fxml"));
+        FXMLLoader sScreen3 = new FXMLLoader(HelloApplication.class.getResource("Operation3.fxml"));
+        FXMLLoader sScreen4 = new FXMLLoader(HelloApplication.class.getResource("Operation4.fxml"));
+        FXMLLoader sScreen5 = new FXMLLoader(HelloApplication.class.getResource("Operation5.fxml"));
+
+        //screen.getChildren().removeAll();
+        screen.getChildren().clear();
+        //System.out.println(screen.getChildren());
+        try{
+            switch (act){
+                case "Admin einfuegen":
+                    screen.getChildren().add(sScreen1.load());
+                    break;
+                case"Admin listen":
+                    screen.getChildren().add(sScreen2.load());
+                    break;
+                case "Personal loeschen":
+                    screen.getChildren().add(sScreen3.load());
+                    break;
+                case"Personal einfuegen":
+                    screen.getChildren().add(sScreen4.load());
+                    break;
+                case "Personal listen":
+                    screen.getChildren().add(sScreen5.load());
+                    break;
+                default:
+                    System.out.println("No matching");
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+
+    }
+
+    // Switch Aktion Seite fuer Schuler
     public void switchAktion(ActionEvent event) throws IOException {
         //String act = (String) this.AktionChoise.getValue();
         String act = (String) this.AktionChoise.getSelectionModel().getSelectedItem();
@@ -86,14 +151,6 @@ public class page1Controller  {
                 System.out.println("No matching");
         }
 
-/*
-        if(act.equals("Schueler loeschen")){
-            screen.getChildren().add(sScreen.load());
-        }else if(act.equals("Schueler einfuegen")){
-            screen.getChildren().add(sScreen3.load());
-        }else if(act.equals("Schueler listen")){
-            screen.getChildren().add(sScreen2.load());
-        }*/
     }
     public void setUserName(String s){
         myLabel.setText(s);

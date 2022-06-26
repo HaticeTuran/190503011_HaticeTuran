@@ -71,14 +71,16 @@ public class db {
 
         try {
             stmt = conn.createStatement();
-            ResultSet res = stmt.executeQuery("SELECT FahrSchueler.TC_No, Person.Name, Person.Nachname  FROM Person, FahrSchueler WHERE Person.TC == FahrSchueler.TC_No");
+            ResultSet res = stmt.executeQuery("SELECT FahrSchueler.Schueler_no, FahrSchueler.TC_No, Person.Name, Person.NachName, Person.Geburtsdatum FROM Person, FahrSchueler WHERE Person.TC == FahrSchueler.TC_No");
             while (res.next()){
+                String s = res.getString("Schueler_no");
                 String s1 = res.getString("TC_No");
                 String s2 = res.getString("Name");
-                String s3 = res.getString("Nachname");
-                //Fahrschueler f = new Fahrschueler(s1,s2,s3);
-                //arr.add(f);
-                arr.add(new Fahrschueler(s1,s2,s3));
+                String s3 = res.getString("NachName");
+                String s4 = res.getString("Geburtsdatum");
+
+                arr.add(new Fahrschueler(s,s1,s2,s3,s4));
+
             }
         }catch (Exception e){
             System.out.println(e);
@@ -96,9 +98,19 @@ public class db {
             System.out.println(E);
         }
     }
+    // Personal löschen
+    public static void deletePersonal(String TC){
+        try{
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate("DELETE FROM Personal WHERE Personal.TC="+TC);
+            stmt.executeUpdate("DELETE FROM Person WHERE Person.TC="+TC);
+        }catch (Exception E){
+            System.out.println(E);
+        }
+    }
+
+
     //Schueler einfügen
-
-
     public static Boolean addSchueler(String tc,String name, String nname, String GDatum,int KursId,String blutt,String L_id){
         if(!db.containSchueler(tc)){
             //System.out.println(GDatum);
@@ -159,10 +171,11 @@ public class db {
         //this.connect();
         try {
             Statement stmt = conn.createStatement();
-            ResultSet res = stmt.executeQuery("SELECT Rolle FROM Personal WHERE Personal.BenutzerName =="+Benutzername);
+            ResultSet res = stmt.executeQuery("SELECT Rolle,BenutzerName FROM Personal ");
             while (res.next()){
-                String s2 = res.getString("Rolle");
-                if(s2.equals("Admin")){
+                String s1 = res.getString("Rolle");
+                String s2 = res.getString("BenutzerName");
+                if(s1.equals("Admin") && s2.equals(Benutzername)){
                     return true;
                 }
             }

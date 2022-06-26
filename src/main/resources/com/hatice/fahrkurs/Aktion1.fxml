@@ -13,17 +13,17 @@
             <Button layoutY="8.0" mnemonicParsing="false" style="-fx-background-color: transparent;" textFill="WHITE" />
          </children>
       </Pane>
-      <Pane layoutY="34.0" prefHeight="336.0" prefWidth="58.0" style="-fx-background-color: #DD2E44;" />
-      <AnchorPane fx:id="aP" layoutX="58.0" layoutY="34.0" prefHeight="336.0" prefWidth="371.0">
+      <AnchorPane fx:id="aP" layoutY="34.0" prefHeight="336.0" prefWidth="449.0">
          <children>
-            <TableView fx:id="SchuelerList" layoutX="33.0" layoutY="41.0" prefHeight="255.0" prefWidth="306.0">
+            <TableView fx:id="SchuelerList" layoutX="11.0" prefHeight="314.0" prefWidth="427.0">
               <columns>
-                <TableColumn fx:id="TC" prefWidth="75.0" text="TC" />
-                <TableColumn fx:id="Name" prefWidth="75.0" text="Name" />
-                  <TableColumn fx:id="Nachname" prefWidth="75.0" text="Nachname" />
+                  <TableColumn fx:id="SchuelerNo" prefWidth="56.0" text="SchuelerNo" />
+                <TableColumn fx:id="TC" prefWidth="79.0" text="TC" />
+                <TableColumn fx:id="Name" prefWidth="72.0" text="Name" />
+                  <TableColumn fx:id="Nachname" prefWidth="98.0" text="Nachname" />
+                  <TableColumn fx:id="GeburtsDatum" prefWidth="120.0" text="GeburtsDatum" />
               </columns>
             </TableView>
-            <Button fx:id="show" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#List" text="Show List" />
          </children>
       </AnchorPane>
    </children>
