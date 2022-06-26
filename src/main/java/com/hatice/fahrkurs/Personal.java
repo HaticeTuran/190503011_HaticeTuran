@@ -3,6 +3,12 @@ package com.hatice.fahrkurs;
 public class Personal extends Person{
     private int PersonalNummer;
     private String Rolle;
+    private String Benutzername;
+    public Personal(String TC, String Benutzername, int pn){
+        super(TC);
+        this.Benutzername = Benutzername;
+        PersonalNummer = pn;
+    }
     public Personal(String Tc){
         super(Tc);
     }
@@ -25,7 +31,13 @@ public class Personal extends Person{
 
     @Override
     public String toString(){
-        return super.toString() +" "+ PersonalNummer +" "+Rolle;
+        String s = "Personalnummer: " + String.valueOf(PersonalNummer) + "- Benutzername: "+ Benutzername + " ";
+        return s + super.toString();
     }
+
+    /*@Override
+    public String toString(){
+        return super.toString() +" "+ PersonalNummer +" "+Rolle;
+    }*/
 
 }

@@ -103,12 +103,12 @@ public class Person {
         TelefonNummer = telefonNummer;
     }
 
-    @Override
+    /*@Override
     public boolean equals( Object o){
         Person p = (Person) o;
         if(p.getTC_Nummer().equals(this.TC_Nummer)) return  true;
         else return false;
-    }
+    }*/
     @Override
     public String toString(){
         return Name + " "+ NachName+ " "+TC_Nummer+" "+Geburtsdatum+" " +Geschlecht+" " +Adresse+ " "+MailAdresse+" " +TelefonNummer;

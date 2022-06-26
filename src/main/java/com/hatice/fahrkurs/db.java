@@ -132,6 +132,23 @@ public class db {
         }
 
     }
+        // List of Personal
+    public static ArrayList<Personal> getPersonalList(){
+        ArrayList<Personal> arr = new ArrayList<>();
+        try {
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT TC, Personal_nummer, BenutzerName FROM Personal");
+            while (res.next()){
+                String TC= res.getString("TC");
+                String s1 = res.getString("BenutzerName");
+                int pn = res.getInt("Personal_nummer");
+                arr.add(new Personal(TC,s1,pn));
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return arr;
+    }
 
     // List of courses id
     public static ArrayList<Integer> getKursesID(){
@@ -183,6 +200,16 @@ public class db {
             System.out.println(e);
         }
         return false;
+    }
+
+    // Update the user to admin
+    public static void makeAdmin(String s){
+        String sql = "UPDATE Personal SET Rolle='Admin' WHERE BenutzerName= '" + s +"'";
+        try {
+            stmt.executeUpdate(sql);
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 
 }
