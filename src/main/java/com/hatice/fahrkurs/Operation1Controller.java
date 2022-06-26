@@ -15,13 +15,19 @@ public class Operation1Controller {
     @FXML
     private ChoiceBox<?> PersonList;
 
+    @FXML
+    private ChoiceBox<?> PersonList1;
+
     private Personal[] PersonalList = db.getPersonalList().toArray(new Personal[db.getPersonalList().size()]);
 
     @FXML
     private Label errMsg;
 
     @FXML
-    private Button ok;
+    private Button OK;
+
+    @FXML
+    private Button OK1;
 
    @FXML
     public void initialize() {
@@ -31,6 +37,7 @@ public class Operation1Controller {
            a.add(p);
        }
        PersonList.getItems().addAll(a);
+       PersonList1.getItems().addAll(a);
 
     }
 
@@ -43,6 +50,16 @@ public class Operation1Controller {
         System.out.println(arrOfStr[3]);
 
         db.makeAdmin(arrOfStr[3]);
+    }
+
+    public void addUser (ActionEvent e) {
+
+        String act = (String) this.PersonList1.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr = act.split(" ");
+
+        System.out.println(arrOfStr[3]);
+
+        db.makeUser(arrOfStr[3]);
     }
 
 }

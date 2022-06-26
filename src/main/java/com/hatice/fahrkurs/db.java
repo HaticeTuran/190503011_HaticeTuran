@@ -258,5 +258,29 @@ public class db {
             System.out.println(e);
         }
     }
+    // Update the personal to user
+    public static void makeUser(String s){
+        String sql = "UPDATE Personal SET Rolle='User' WHERE BenutzerName= '" + s +"'";
+        try {
+            stmt.executeUpdate(sql);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    // update Passwort
+    public static Boolean IsUpdatePasswort(String bn, String lp, String np){
+           if(containPersonal(bn,lp)){
+               String sql = "UPDATE Personal SET Passwort=" +"'"+np+"'"+ "WHERE Benutzername='"+bn+"'";
+               try {
+                   stmt.executeUpdate(sql);
+               }catch (Exception e){
+                   System.out.println(e);
+               }
+               return true;
+           }else{
+               return false;
+           }
+    }
 
 }

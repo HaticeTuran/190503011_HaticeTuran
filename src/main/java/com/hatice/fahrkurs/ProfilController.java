@@ -6,9 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class ProfilController {
@@ -20,6 +18,15 @@ public class ProfilController {
 
     @FXML
     private Button zurueck;
+
+    @FXML
+    private Button passButton;
+
+    @FXML
+    private PasswordField pass;
+
+    @FXML
+    private PasswordField altpass;
 
     private Stage stage;
     private Scene scene;
@@ -43,6 +50,33 @@ public class ProfilController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void updatePass(ActionEvent event){
+        Boolean b = db.IsUpdatePasswort(UserName.getText(), altpass.getText(), pass.getText());
+
+        if(altpass.getText().equals(pass.getText())){
+            Alert alert1 = new Alert(Alert.AlertType.CONFIRMATION);
+            alert1.setTitle("Gescheiterte Operation!");
+            alert1.setHeaderText("Etwas ist schief gelaufen.");
+            alert1.setContentText("Das neue Passwort darf nicht mit dem alten Passwort übereinstimmen!");
+            if(alert1.showAndWait().get() == ButtonType.OK){
+                //
+            }
+        }
+
+
+        if(!b){
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Gescheiterte Operation!");
+            alert.setHeaderText("Etwas ist schief gelaufen.");
+            alert.setContentText("Ueberpruefen Sie Ihre Transaktion!");
+
+
+            if(alert.showAndWait().get() == ButtonType.OK){
+                //
+            }
+        }
     }
 
 }

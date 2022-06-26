@@ -46,7 +46,7 @@ public class page1Controller  {
     @FXML
     private Button ChoiseOp;
 
-    private String[] Operations = {"Admin einfuegen", "Personal listen","Personal loeschen","Personal einfuegen","Personal listen11"};
+    private String[] Operations = {"Admin und User einfuegen", "Personal listen","Personal loeschen","Personal einfuegen","Personal listen11"};
     @FXML
     public void initialize() {
         AktionChoise.getItems().addAll(Aktionen);
@@ -69,7 +69,6 @@ public class page1Controller  {
         stage.setScene(scene);
         stage.show();
     }
-
 
 
     //Switch Aktion Seite fuer Personal
@@ -101,7 +100,7 @@ public class page1Controller  {
         //System.out.println(screen.getChildren());
         try{
             switch (act){
-                case "Admin einfuegen":
+                case "Admin und User einfuegen":
                     screen.getChildren().add(sScreen1.load());
                     break;
                 case"Personal listen":

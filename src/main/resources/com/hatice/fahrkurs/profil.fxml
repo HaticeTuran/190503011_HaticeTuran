@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -53,16 +54,13 @@
                   <Button layoutX="417.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" />
                </children>
             </Pane>
-            <Pane prefHeight="40.0" prefWidth="454.0" style="-fx-background-color: #ffffff;">
-               <children>
-                  <TextField fx:id="Name" layoutX="14.0" layoutY="8.0" prefHeight="25.0" prefWidth="196.0" promptText="Name" />
-                  <TextField fx:id="Nachname" layoutX="259.0" layoutY="8.0" prefHeight="25.0" prefWidth="164.0" promptText="Nachname" />
-               </children>
-            </Pane>
+            <Pane prefHeight="7.0" prefWidth="454.0" style="-fx-background-color: #ffffff;" />
             <Pane prefHeight="42.0" prefWidth="454.0" style="-fx-background-color: #EF9393;">
                <children>
-                  <TextField layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="196.0" promptText="Benutzername" />
-                  <TextField layoutX="260.0" layoutY="9.0" prefHeight="25.0" prefWidth="164.0" promptText="Passwort" />
+                  <TextField layoutX="14.0" layoutY="9.0" prefHeight="25.0" prefWidth="113.0" text="Passwort aendern:" />
+                  <Button fx:id="passButton" layoutX="356.0" layoutY="9.0" mnemonicParsing="false" onAction="#updatePass" prefHeight="25.0" prefWidth="84.0" text="Aktualisieren" />
+                  <PasswordField fx:id="altpass" layoutX="136.0" layoutY="9.0" prefHeight="25.0" prefWidth="99.0" promptText="Altes Passwort" />
+                  <PasswordField fx:id="pass" layoutX="249.0" layoutY="9.0" prefHeight="25.0" prefWidth="99.0" promptText="Neues Passwort" />
                </children>
             </Pane>
             <Pane prefHeight="70.0" prefWidth="454.0" style="-fx-background-color: #ffffff;">
@@ -92,7 +90,7 @@
                   <Button layoutX="331.0" layoutY="84.0" mnemonicParsing="false" style="-fx-background-color: #EF9393;" text="Aktualisieren" />
                </children>
             </Pane>
-            <Pane prefHeight="54.0" prefWidth="454.0" style="-fx-background-color: #EF9393;" />
+            <Pane prefHeight="100.0" prefWidth="454.0" style="-fx-background-color: #EF9393;" />
          </children>
       </VBox>
    </children>
