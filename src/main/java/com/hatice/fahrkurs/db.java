@@ -323,7 +323,7 @@ public class db {
 
     // add Kurse
     public static void updateKursCP(String Topic,String L_id,int cp){
-        String s = "UPDATE Kurs SET Kapazitaet ="+cp+ " WHERE Topic ='"+Topic+"'AND Lehrer_id = '"+ L_id+"');";
+        String s = "UPDATE Kurs SET Kapazitaet ="+cp+ " WHERE Topic ='"+Topic+"'AND Lehrer_id = '"+ L_id+"';";
         //String s1 = "INSERT INTO Kurs (Topic, Lehrer_id,Kapazitaet) VALUES('"+Topic+"','"+L_id+"',"+cp+");";
 
         try {
@@ -338,26 +338,23 @@ public class db {
 
         String s = "DELETE FROM Kurs WHERE Topic ='" + Topic + "' AND Lehrer_id ='"+ L_id +"'" + " AND Kapazitaet = "+ cp;
 
-        System.out.println(s);
         try {
             stmt.executeUpdate(s);
         }catch (Exception e){
             System.out.println(e);
         }
     }
-
+    //Kontolle ob eine solche Kurs gibt
     public static Boolean containKurs(String Topic,String L_id){
         //this.connect();
         try {
             Statement stmt = conn.createStatement();
-            ResultSet res = stmt.executeQuery("SELECT * FROM Kurs");
+            ResultSet res = stmt.executeQuery("SELECT * FROM Kurs;");
             while (res.next()){
                 String s1 = res.getString("Topic");
                 String s2 = res.getString("Lehrer_id");
 
-                System.out.println(s1 + s2);
-
-                if(s1.equals(Topic) && s2.equals(L_id)){
+                if(Topic.equals(s1) && L_id.equals(s2)){
                     return true;
                 }
             }

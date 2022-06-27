@@ -53,8 +53,12 @@ public class Operation5Controller {
         String[] arrOfStr = act.split(" ");
         String tc = arrOfStr[6];
         System.out.println(arrOfStr[6]);
-        db.addKurs(Topics.getSelectionModel().getSelectedItem(),tc,Integer.parseInt(capacity.getText()));
+        if(!db.containKurs(Topics.getSelectionModel().getSelectedItem(),tc)) {
 
+            db.addKurs(Topics.getSelectionModel().getSelectedItem(), tc, Integer.parseInt(capacity.getText()));
+        }else {
+            errMsg.setText("Diese Kurs existiert schon!");
+        }
     }
 
     @FXML
@@ -72,9 +76,11 @@ public class Operation5Controller {
         String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();
         String[] arrOfStr = act.split(" ");
         String tc = arrOfStr[6];
-        db.deleteKurs(Topics.getSelectionModel().getSelectedItem(),tc,Integer.parseInt(capacity.getText()));
-
+        if(db.containKurs(Topics.getSelectionModel().getSelectedItem(),tc)) {
+            db.deleteKurs(Topics.getSelectionModel().getSelectedItem(), tc, Integer.parseInt(capacity.getText()));
+        }else {
+            errMsg.setText("Diese Kurse ist nicht gefunden! Kontrolieren Sie die Informationen!");
+        }
     }
-
 
 }
