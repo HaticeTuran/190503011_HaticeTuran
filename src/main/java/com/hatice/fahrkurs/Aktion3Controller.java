@@ -2,10 +2,7 @@ package com.hatice.fahrkurs;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.util.Arrays;
 
@@ -19,15 +16,21 @@ public class Aktion3Controller {
     private Button AddStudButton;
 
     @FXML
-    //private ChoiceBox<String> KursID;
+    private ChoiceBox<String> students;
+
+    @FXML
+    private ChoiceBox<String> exams;
+
+    @FXML
+    private TextField Note;
 
 
-    /*@FXML
+    @FXML
     public void initialize() {
+        students.getItems().addAll(db.ListStudents());
+        exams.getItems().addAll(db.ListExams());
 
-        //KursID.getItems().addAll( this.FullList());
-
-    }*/
+    }
 
     private String[] FullList(){
         int[] arr = new int [db.getKursesID().size()];
@@ -48,6 +51,31 @@ public class Aktion3Controller {
         }else{
             errorMsg.setText("Die Schueler ist schon auf dem System befunden.");
         }
+    }
+
+    @FXML
+    public void addNotes(){
+        String act = (String) this.students.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr = act.split(" ");
+        System.out.println(arrOfStr[3]);
+
+        String act1 = (String) this.exams.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr1 = act1.split(" ");
+
+        System.out.println(arrOfStr1[1]);
+        //
+        if(!arrOfStr[3].equals("") && !arrOfStr1[1].equals("") && !Note.getText().equals("")){
+            db.addNotes(arrOfStr[3],Integer.parseInt(arrOfStr1[1]),Integer.parseInt(Note.getText()));
+        }else{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ungueltige Operation!");
+            alert.setHeaderText("Es gibt Luecken, die Sie ausfüllen müssen. ");
+            alert.setContentText("Bitte, kontrollieren!!");
+            if (alert.showAndWait().get() == ButtonType.OK) {
+                //
+            }
+        }
+
     }
 
 }

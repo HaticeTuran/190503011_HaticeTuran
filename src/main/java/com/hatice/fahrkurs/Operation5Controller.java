@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class Operation5Controller {
 
@@ -43,6 +40,8 @@ public class Operation5Controller {
     @FXML
     private TextField Datum;
 
+    @FXML TextField altDatum;
+
     @FXML
     private Button PrufDelete;
 
@@ -68,14 +67,48 @@ public class Operation5Controller {
 
     @FXML
     public void addPruefung(ActionEvent event){
-        db.addPruefung(KursIds.getSelectionModel().getSelectedItem(),Datum.getText(),Topics1.getSelectionModel().getSelectedItem());
+       if(!KursIds.getSelectionModel().getSelectedItem().equals("") && !Datum.getText().equals("") && !Topics1.getSelectionModel().getSelectedItem().equals("")){
+           db.addPruefung(KursIds.getSelectionModel().getSelectedItem(),Datum.getText(),Topics1.getSelectionModel().getSelectedItem());
+       }else{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ungueltige Operation!");
+            alert.setHeaderText("Es gibt Luecken, die Sie ausfüllen müssen. ");
+            alert.setContentText("Bitte, kontrollieren!!");
+            if(alert.showAndWait().get() == ButtonType.OK){
+                //
+            }
+        }
     }
 
     @FXML
     public void deletePruefung(ActionEvent event){
-        db.deletePruefung(KursIds.getSelectionModel().getSelectedItem(),Datum.getText(),Topics1.getSelectionModel().getSelectedItem());
+        if(!KursIds.getSelectionModel().getSelectedItem().equals("") && !Datum.getText().equals("") && !Topics1.getSelectionModel().getSelectedItem().equals("")){
+            db.deletePruefung(KursIds.getSelectionModel().getSelectedItem(),Datum.getText(),Topics1.getSelectionModel().getSelectedItem());
+        }else{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ungueltige Operation!");
+            alert.setHeaderText("Es gibt Luecken, die Sie ausfüllen müssen. ");
+            alert.setContentText("Bitte, kontrollieren!!");
+            if(alert.showAndWait().get() == ButtonType.OK){
+                //
+            }
+        }
     }
+    @FXML
+    public void updatePruefung(ActionEvent event) {
+        if (!KursIds.getSelectionModel().getSelectedItem().equals("") && !Datum.getText().equals("") && !Topics1.getSelectionModel().getSelectedItem().equals("") && !altDatum.getText().equals("")) {
+            db.updatePruefung(KursIds.getSelectionModel().getSelectedItem(), Datum.getText(), Topics1.getSelectionModel().getSelectedItem(), altDatum.getText());
+        } else {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ungueltige Operation!");
+            alert.setHeaderText("Es gibt Luecken, die Sie ausfüllen müssen. ");
+            alert.setContentText("Bitte, kontrollieren!!");
+            if (alert.showAndWait().get() == ButtonType.OK) {
+                //
 
+            }
+        }
+    }
     @FXML
     public void addKurs(ActionEvent event) {
         String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();

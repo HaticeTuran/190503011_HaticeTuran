@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-
 
 <AnchorPane prefHeight="370.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hatice.fahrkurs.Aktion3Controller">
    <children>
@@ -27,9 +27,15 @@
          <children>
             <Pane layoutY="-1.0" prefHeight="31.0" prefWidth="439.0" style="-fx-background-color: #DD2E44;">
                <children>
-                  <Label layoutX="14.0" layoutY="9.0" prefHeight="17.0" prefWidth="411.0" style="-fx-background-color: #ffffff;" text="Kurs Registierung" />
+                  <Label layoutX="14.0" layoutY="9.0" prefHeight="17.0" prefWidth="411.0" style="-fx-background-color: #ffffff;" text="Noten Einfuegen" />
                </children>
             </Pane>
+            <ChoiceBox fx:id="students" layoutX="145.0" layoutY="43.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="exams" layoutX="145.0" layoutY="90.0" prefWidth="150.0" />
+            <TextField fx:id="Note" layoutX="14.0" layoutY="134.0" prefHeight="25.0" prefWidth="115.0" promptText="Note" />
+            <TextField layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="115.0" text="Schueler" />
+            <TextField layoutX="14.0" layoutY="90.0" prefHeight="25.0" prefWidth="115.0" text="Pruefung" />
+            <Button fx:id="noteAdd" layoutX="257.0" layoutY="134.0" mnemonicParsing="false" onAction="#addNotes" text="Add" />
          </children>
       </AnchorPane>
       <Label fx:id="errorMsg" layoutX="148.0" layoutY="151.0" prefHeight="17.0" prefWidth="197.0" />

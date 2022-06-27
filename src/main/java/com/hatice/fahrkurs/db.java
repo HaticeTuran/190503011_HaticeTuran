@@ -323,7 +323,7 @@ public class db {
     // add Pruefung
     public static void addPruefung(int k_id,String d, String t){
         String s1 = "INSERT INTO Pruefung (Kurs_id, Datum, Topic) VALUES("+k_id+",'"+d+"','"+t+"');";
-        System.out.println(s1);
+
         try {
             stmt.executeUpdate(s1);
         }catch (Exception e){
@@ -334,6 +334,16 @@ public class db {
     // loesche Pruefung
     public static void deletePruefung(int k_id,String d, String t){
         String s1 = "DELETE FROM Pruefung WHERE Kurs_id=" + k_id + " AND Datum='"+d+"'AND Topic ='"+t+"'";
+        try {
+            stmt.executeUpdate(s1);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    // update Pruefung
+    public static void updatePruefung(int k_id,String d, String t,String altd){
+        String s1 = "UPDATE Pruefung SET Datum ='"+d+"' WHERE Kurs_id=" + k_id + " AND Datum='"+altd+"'AND Topic ='"+t+"'";
         System.out.println(s1);
         try {
             stmt.executeUpdate(s1);
@@ -396,6 +406,58 @@ public class db {
             System.out.println(e);
         }
         return false;
+    }
+    //List of students
+    public static String[] ListStudents(){
+        ArrayList<String> arr = new ArrayList<String>();
+        try {
+
+            Statement stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT * FROM FahrSchueler;");
+
+            while (res.next()){
+                int id = res.getInt("Schueler_no");
+                String s2 = res.getString("TC_No");
+                arr.add("ID: "+String.valueOf(id)+" TC: "+s2);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        String [] std = new String[arr.size()];
+        std = arr.toArray(std);
+        return  std;
+    }
+    //List of exams
+    public static String[] ListExams(){
+        ArrayList<String> arr = new ArrayList<String>();
+        try {
+
+            Statement stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT * FROM Pruefung;");
+
+            while (res.next()){
+                int id = res.getInt("Pruefung_id");
+                String s2 = res.getString("Datum");
+                arr.add("ID: "+String.valueOf(id)+" Datum: "+s2);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        String [] std = new String[arr.size()];
+        std = arr.toArray(std);
+        return  std;
+    }
+
+    //add Notes für Students
+    public static void addNotes(String sID, int pID, int Note){
+        String s1 = "INSERT INTO Noten (SchuelerID, PruefungID, Note) VALUES('"+sID+"',"+pID+","+Note+");";
+        System.out.println(s1);
+        try {
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(s1);
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 
 }
