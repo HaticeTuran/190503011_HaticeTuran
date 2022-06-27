@@ -89,7 +89,6 @@ public class db {
         return arr;
     }
 
-
     // Lİst of students
     public static ObservableList<Fahrschueler> listSchueler(){
         ObservableList<Fahrschueler> arr = FXCollections.observableArrayList();
@@ -123,6 +122,7 @@ public class db {
             System.out.println(E);
         }
     }
+
     // Personal löschen
     public static void deletePersonal(String TC){
         try{
@@ -157,6 +157,7 @@ public class db {
         }
 
     }
+
     // List of Lehrern
     public static ArrayList<Kursleiter> getLehrerList(){
         ArrayList<Kursleiter> arr = new ArrayList<>();
@@ -196,6 +197,7 @@ public class db {
         }
         return arr;
     }
+
     // Einfuegen einer Personal
     public static Boolean addPersonal(String tc,String n, String nn,String gb, String bn,String pass){
         if(!db.containPersonal(bn,pass)){
@@ -280,6 +282,7 @@ public class db {
             System.out.println(e);
         }
     }
+
     // Update the personal to user
     public static void makeUser(String s){
         String sql = "UPDATE Personal SET Rolle='User' WHERE BenutzerName= '" + s +"'";
@@ -306,17 +309,62 @@ public class db {
     }
     // add Kurse
     public static void addKurs(String Topic,String L_id,int cp){
+        if(!db.containKurs(Topic,L_id)){
+            String s1 = "INSERT INTO Kurs (Topic, Lehrer_id,Kapazitaet) VALUES('"+Topic+"','"+L_id+"',"+cp+");";
 
-        String s1 = "INSERT INTO Kurs (Topic, Lehrer_id,Kapazitaet) VALUES('"+Topic+"','"+L_id+"',"+cp+");";
-
-        try {
-            stmt.executeUpdate(s1);
-        }catch (Exception e){
-            System.out.println(e);
+            try {
+                stmt.executeUpdate(s1);
+            }catch (Exception e){
+                System.out.println(e);
+            }
         }
 
     }
 
+    // add Kurse
+    public static void updateKursCP(String Topic,String L_id,int cp){
+        String s = "UPDATE Kurs SET Kapazitaet ="+cp+ " WHERE Topic ='"+Topic+"'AND Lehrer_id = '"+ L_id+"');";
+        //String s1 = "INSERT INTO Kurs (Topic, Lehrer_id,Kapazitaet) VALUES('"+Topic+"','"+L_id+"',"+cp+");";
 
+        try {
+            stmt.executeUpdate(s);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    // delete Kurse
+    public static void deleteKurs(String Topic,String L_id,int cp){
+
+        String s = "DELETE FROM Kurs WHERE Topic ='" + Topic + "' AND Lehrer_id ='"+ L_id +"'" + " AND Kapazitaet = "+ cp;
+
+        System.out.println(s);
+        try {
+            stmt.executeUpdate(s);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public static Boolean containKurs(String Topic,String L_id){
+        //this.connect();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT * FROM Kurs");
+            while (res.next()){
+                String s1 = res.getString("Topic");
+                String s2 = res.getString("Lehrer_id");
+
+                System.out.println(s1 + s2);
+
+                if(s1.equals(Topic) && s2.equals(L_id)){
+                    return true;
+                }
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return false;
+    }
 
 }

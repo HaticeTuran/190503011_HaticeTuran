@@ -15,6 +15,9 @@ public class Operation5Controller {
     private Label L_id;
 
     @FXML
+    private Label errMsg;
+
+    @FXML
     private Label topic;
 
     @FXML
@@ -45,7 +48,7 @@ public class Operation5Controller {
     }
 
     @FXML
-    void addKurs(ActionEvent event) {
+    public void addKurs(ActionEvent event) {
         String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();
         String[] arrOfStr = act.split(" ");
         String tc = arrOfStr[6];
@@ -53,5 +56,25 @@ public class Operation5Controller {
         db.addKurs(Topics.getSelectionModel().getSelectedItem(),tc,Integer.parseInt(capacity.getText()));
 
     }
+
+    @FXML
+    public void updateKurs(ActionEvent event){
+        String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr = act.split(" ");
+        String tc = arrOfStr[6];
+        if(db.containKurs(Topics.getSelectionModel().getSelectedItem(),tc)){
+            db.updateKursCP(Topics.getSelectionModel().getSelectedItem(),tc,Integer.parseInt(capacity.getText()));
+        }else{
+            errMsg.setText("Diese Kurse ist nicht gefunden!");
+        }
+    }
+    public void deleteKurs(ActionEvent event){
+        String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr = act.split(" ");
+        String tc = arrOfStr[6];
+        db.deleteKurs(Topics.getSelectionModel().getSelectedItem(),tc,Integer.parseInt(capacity.getText()));
+
+    }
+
 
 }
