@@ -43,6 +43,12 @@ public class Operation5Controller {
     @FXML
     private TextField Datum;
 
+    @FXML
+    private Button PrufDelete;
+
+    @FXML
+    private Button PrufAk;
+
     private Integer[] ids = db.getKursesID().toArray(new Integer[db.getKursesID().size()]);
 
     //private Integer[] ids = (Integer[]) db.getKursesID().toArray();
@@ -63,6 +69,11 @@ public class Operation5Controller {
     @FXML
     public void addPruefung(ActionEvent event){
         db.addPruefung(KursIds.getSelectionModel().getSelectedItem(),Datum.getText(),Topics1.getSelectionModel().getSelectedItem());
+    }
+
+    @FXML
+    public void deletePruefung(ActionEvent event){
+        db.deletePruefung(KursIds.getSelectionModel().getSelectedItem(),Datum.getText(),Topics1.getSelectionModel().getSelectedItem());
     }
 
     @FXML

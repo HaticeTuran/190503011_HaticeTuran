@@ -61,6 +61,8 @@
       </Label>
       <ChoiceBox fx:id="KursIds" layoutX="163.0" layoutY="292.0" prefHeight="25.0" prefWidth="92.0" />
       <TextField fx:id="Datum" layoutX="19.0" layoutY="330.0" promptText="Datum(dd.mm.yyyy)" />
-      <Button fx:id="add1" layoutX="221.0" layoutY="330.0" mnemonicParsing="false" onAction="#addPruefung" text="Add" />
+      <Button fx:id="add1" layoutX="298.0" layoutY="251.0" mnemonicParsing="false" onAction="#addPruefung" prefHeight="25.0" prefWidth="84.0" text="Add" />
+      <Button fx:id="PrufAk" layoutX="298.0" layoutY="292.0" mnemonicParsing="false" text="Aktualisieren" />
+      <Button fx:id="PrufDelete" layoutX="299.0" layoutY="330.0" mnemonicParsing="false" onAction="#deletePruefung" prefHeight="25.0" prefWidth="84.0" text="Delete" />
    </children>
 </AnchorPane>

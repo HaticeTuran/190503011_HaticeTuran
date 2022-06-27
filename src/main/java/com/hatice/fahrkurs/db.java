@@ -331,6 +331,17 @@ public class db {
         }
     }
 
+    // loesche Pruefung
+    public static void deletePruefung(int k_id,String d, String t){
+        String s1 = "DELETE FROM Pruefung WHERE Kurs_id=" + k_id + " AND Datum='"+d+"'AND Topic ='"+t+"'";
+        System.out.println(s1);
+        try {
+            stmt.executeUpdate(s1);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
     // add Kurse
     public static void addKurs(String Topic,String L_id,int cp){
         if(!db.containKurs(Topic,L_id)){
