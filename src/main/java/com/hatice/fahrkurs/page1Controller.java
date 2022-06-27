@@ -38,7 +38,7 @@ public class page1Controller  {
     @FXML
     private ChoiceBox<String> AktionChoise;
 
-    private String[] Aktionen = {"Schueler loeschen", "Schueler einfuegen", "Schueler listen"};
+    private String[] Aktionen = {"Schueler loeschen", "Schueler & Noten einfuegen", "Schueler listen"};
 
     @FXML
     private ChoiceBox<String> UserChoise;
@@ -138,7 +138,7 @@ public class page1Controller  {
             case "Schueler loeschen":
                 screen.getChildren().add(sScreen.load());
                 break;
-            case "Schueler einfuegen":
+            case "Schueler & Noten einfuegen":
                 screen.getChildren().add(sScreen3.load());
                 break;
             case     "Schueler listen":

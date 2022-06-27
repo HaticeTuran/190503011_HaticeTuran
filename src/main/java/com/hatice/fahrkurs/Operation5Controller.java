@@ -111,6 +111,7 @@ public class Operation5Controller {
     }
     @FXML
     public void addKurs(ActionEvent event) {
+        errMsg.setText("");
         String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();
         String[] arrOfStr = act.split(" ");
         String tc = arrOfStr[6];
@@ -125,6 +126,7 @@ public class Operation5Controller {
 
     @FXML
     public void updateKurs(ActionEvent event){
+        errMsg.setText("");
         String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();
         String[] arrOfStr = act.split(" ");
         String tc = arrOfStr[6];
@@ -136,6 +138,7 @@ public class Operation5Controller {
     }
     @FXML
     public void deleteKurs(ActionEvent event){
+        errMsg.setText("");
         String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();
         String[] arrOfStr = act.split(" ");
         String tc = arrOfStr[6];
