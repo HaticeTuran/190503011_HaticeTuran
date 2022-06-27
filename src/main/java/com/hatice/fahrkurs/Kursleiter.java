@@ -9,6 +9,13 @@ public class Kursleiter extends Personal{
     public Kursleiter(String Tc) {
         super(Tc);
     }
+    /*public Kursleiter(String Tc,String n, String nn) {
+        super(Tc,n,nn);
+    }*/
+
+    public Kursleiter(String Tc,String bn, String pn) {
+        super(Tc,bn,Integer.parseInt(pn));
+    }
 
     public void addSchueler(Fahrschueler f){
         Schueler.add(f);

@@ -157,7 +157,29 @@ public class db {
         }
 
     }
-        // List of Personal
+    // List of Lehrern
+    public static ArrayList<Kursleiter> getLehrerList(){
+        ArrayList<Kursleiter> arr = new ArrayList<>();
+        try {
+            stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT KursLeiter.KursLeiter_id,Personal_nummer, BenutzerName FROM Personal, KursLeiter WHERE Personal.TC = KursLeiter.KursLeiter_id");
+            while (res.next()){
+                String TC= res.getString("KursLeiter_id");
+                String pn = res.getString("Personal_nummer");
+                String bn = res.getString("BenutzerName");
+                /*String n = res.getString("Name");
+                String nn = res.getString("NachName");
+                System.out.println(TC + n +nn );
+                arr.add(new Kursleiter(TC,n,nn));*/
+                arr.add(new Kursleiter(TC,bn,bn));
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return arr;
+    }
+
+    // List of Personal
     public static ArrayList<Personal> getPersonalList(){
         ArrayList<Personal> arr = new ArrayList<>();
         try {
@@ -174,7 +196,7 @@ public class db {
         }
         return arr;
     }
-    // Loeschen einer Personal
+    // Einfuegen einer Personal
     public static Boolean addPersonal(String tc,String n, String nn,String gb, String bn,String pass){
         if(!db.containPersonal(bn,pass)){
             //System.out.println(GDatum);
@@ -282,5 +304,19 @@ public class db {
                return false;
            }
     }
+    // add Kurse
+    public static void addKurs(String Topic,String L_id,int cp){
+
+        String s1 = "INSERT INTO Kurs (Topic, Lehrer_id,Kapazitaet) VALUES('"+Topic+"','"+L_id+"',"+cp+");";
+
+        try {
+            stmt.executeUpdate(s1);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+    }
+
+
 
 }
