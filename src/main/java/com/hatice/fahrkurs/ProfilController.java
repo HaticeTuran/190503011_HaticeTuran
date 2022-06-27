@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 public class ProfilController {
     @FXML
-    private TextField Name, Nachname, Mail, Telefon, Land, Dorf, Tür_no, Stadt, Strasse, Postleitzahl;
+    private TextField Name, Nachname, Mail, Telefon, Land, Dorf, Tür_no, Stadt, Strasse, Postleitzahl,id;
 
     @FXML
     private Label UserName;
@@ -77,6 +77,9 @@ public class ProfilController {
                 //
             }
         }
+    }
+    public void updateKontakInfo(){
+        db.IsUpdateKontakt(id.getText(),Mail.getText(),Telefon.getText());
     }
 
 }

@@ -17,8 +17,6 @@ public class Operation5Controller {
     @FXML
     private Label errMsg;
 
-    @FXML
-    private Label topic;
 
     @FXML
     private ChoiceBox<String> Topics;
@@ -37,14 +35,34 @@ public class Operation5Controller {
     private TextField capacity;
 
     @FXML
+    private ChoiceBox<String> Topics1;
+
+    @FXML
+    private ChoiceBox<Integer> KursIds;
+
+    @FXML
+    private TextField Datum;
+
+    private Integer[] ids = db.getKursesID().toArray(new Integer[db.getKursesID().size()]);
+
+    //private Integer[] ids = (Integer[]) db.getKursesID().toArray();
+
+    @FXML
     public void initialize() {
         Topics.getItems().addAll(topics);
+        Topics1.getItems().addAll(topics);
+        KursIds.getItems().addAll(ids);
 
         ObservableList a = FXCollections.observableArrayList();
         for(Personal p : PersonalList){
             a.add(p);
         }
         Lehrern.getItems().addAll(a);
+    }
+
+    @FXML
+    public void addPruefung(ActionEvent event){
+        db.addPruefung(KursIds.getSelectionModel().getSelectedItem(),Datum.getText(),Topics1.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -72,6 +90,7 @@ public class Operation5Controller {
             errMsg.setText("Diese Kurse ist nicht gefunden!");
         }
     }
+    @FXML
     public void deleteKurs(ActionEvent event){
         String act = (String) this.Lehrern.getSelectionModel().getSelectedItem().toString();
         String[] arrOfStr = act.split(" ");

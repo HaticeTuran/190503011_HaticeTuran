@@ -307,6 +307,30 @@ public class db {
                return false;
            }
     }
+
+    // update Kontaktinformationen
+    public static void IsUpdateKontakt(String tc, String mail, String tn){
+
+        String sql = "UPDATE Person SET Mail=" +"'"+mail+"', Telefon="+"'"+tn+ "' WHERE TC='"+tc+"'";
+        //System.out.println(sql);
+        try {
+            stmt.executeUpdate(sql);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    // add Pruefung
+    public static void addPruefung(int k_id,String d, String t){
+        String s1 = "INSERT INTO Pruefung (Kurs_id, Datum, Topic) VALUES("+k_id+",'"+d+"','"+t+"');";
+        System.out.println(s1);
+        try {
+            stmt.executeUpdate(s1);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
     // add Kurse
     public static void addKurs(String Topic,String L_id,int cp){
         if(!db.containKurs(Topic,L_id)){
@@ -318,7 +342,6 @@ public class db {
                 System.out.println(e);
             }
         }
-
     }
 
     // add Kurse

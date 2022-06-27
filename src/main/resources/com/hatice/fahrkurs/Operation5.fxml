@@ -7,24 +7,30 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="369.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hatice.fahrkurs.Operation5Controller">
    <children>
       <AnchorPane prefHeight="50.0" prefWidth="455.0" style="-fx-background-color: #DD2E44;">
          <children>
-            <Label layoutX="14.0" layoutY="15.0" style="-fx-background-color: #ffffff;" text="Kurs einfuegen">
+            <Label layoutX="14.0" layoutY="15.0" prefHeight="21.0" prefWidth="427.0" style="-fx-background-color: #ffffff;" text="Kurs einfuegen - loeschen &amp; Kursinformationen aktualisieren ">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="231.0" layoutY="15.0" style="-fx-background-color: #ffffff;" text="Kursinformationen aktualisieren">
+            <Label layoutX="114.0" layoutY="15.0" prefHeight="21.0" prefWidth="0.0" style="-fx-background-color: #ffffff;">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="185.0" prefHeight="50.0" prefWidth="455.0" style="-fx-background-color: #DD2E44;" />
+      <AnchorPane layoutY="185.0" prefHeight="50.0" prefWidth="455.0" style="-fx-background-color: #DD2E44;">
+         <children>
+            <Label layoutX="14.0" layoutY="15.0" prefHeight="21.0" prefWidth="427.0" style="-fx-background-color: #ffffff;" text="Pruefungen einfuegen">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
       <TextField fx:id="capacity" layoutX="14.0" layoutY="144.0" prefHeight="25.0" prefWidth="92.0" promptText="Kapazitaet" />
       <ChoiceBox fx:id="Topics" layoutX="136.0" layoutY="63.0" prefHeight="25.0" prefWidth="92.0" />
       <Button fx:id="add" layoutX="190.0" layoutY="144.0" mnemonicParsing="false" onAction="#addKurs" text="Add" />
@@ -42,5 +48,19 @@
       <Label fx:id="errMsg" layoutX="240.0" layoutY="61.0" prefHeight="85.0" prefWidth="201.0" textFill="RED" />
       <Button fx:id="aktualisieren" layoutX="240.0" layoutY="144.0" mnemonicParsing="false" onAction="#updateKurs" text="Aktualisieren" />
       <Button fx:id="delete" layoutX="334.0" layoutY="144.0" mnemonicParsing="false" onAction="#deleteKurs" text="Delete" />
+      <ChoiceBox fx:id="Topics1" layoutX="163.0" layoutY="251.0" prefHeight="25.0" prefWidth="92.0" />
+      <Label fx:id="topic1" layoutX="23.0" layoutY="254.0" prefHeight="19.0" prefWidth="124.0" style="-fx-background-color: #ffffff;" text="Topic von Pruefung:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="L_id1" layoutX="23.0" layoutY="295.0" prefHeight="19.0" prefWidth="124.0" style="-fx-background-color: #ffffff;" text="Kurs ID:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="KursIds" layoutX="163.0" layoutY="292.0" prefHeight="25.0" prefWidth="92.0" />
+      <TextField fx:id="Datum" layoutX="19.0" layoutY="330.0" promptText="Datum(dd.mm.yyyy)" />
+      <Button fx:id="add1" layoutX="221.0" layoutY="330.0" mnemonicParsing="false" onAction="#addPruefung" text="Add" />
    </children>
 </AnchorPane>

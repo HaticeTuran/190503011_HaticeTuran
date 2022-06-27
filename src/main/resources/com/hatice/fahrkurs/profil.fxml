@@ -63,34 +63,24 @@
                   <PasswordField fx:id="pass" layoutX="249.0" layoutY="9.0" prefHeight="25.0" prefWidth="99.0" promptText="Neues Passwort" />
                </children>
             </Pane>
-            <Pane prefHeight="70.0" prefWidth="454.0" style="-fx-background-color: #ffffff;">
+            <Pane prefHeight="78.0" prefWidth="454.0" style="-fx-background-color: #ffffff;">
                <children>
                   <TextField fx:id="Mail" layoutX="14.0" layoutY="11.0" prefHeight="25.0" prefWidth="196.0" promptText="Mail Adresse" />
                   <TextField fx:id="Telefon" layoutX="261.0" layoutY="11.0" prefHeight="25.0" prefWidth="164.0" promptText="Telefonnummer" />
-                  <Button layoutX="341.0" layoutY="44.0" mnemonicParsing="false" text="Aktualisieren" />
+                  <Button fx:id="updateBtn" layoutX="341.0" layoutY="44.0" mnemonicParsing="false" onAction="#updateKontakInfo" text="Aktualisieren" />
+                  <TextField fx:id="id" layoutX="14.0" layoutY="44.0" prefHeight="25.0" prefWidth="196.0" promptText="ID Nummer" />
                </children>
             </Pane>
             <Pane prefHeight="32.0" prefWidth="454.0" style="-fx-background-color: #EF9393;">
                <children>
-                  <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="131.0" text="Adressinformationen" textFill="WHITE">
+                  <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="131.0" text="Meine Schueler" textFill="WHITE">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Pane prefHeight="124.0" prefWidth="454.0" style="-fx-background-color: #ffffff;">
-               <children>
-                  <TextField fx:id="Land" layoutX="14.0" layoutY="15.0" prefHeight="25.0" prefWidth="125.0" promptText="Land" />
-                  <TextField fx:id="Stadt" layoutX="14.0" layoutY="53.0" prefHeight="25.0" prefWidth="125.0" promptText="Stadt" />
-                  <TextField fx:id="Dorf" layoutX="151.0" layoutY="15.0" prefHeight="25.0" prefWidth="125.0" promptText="Dorf" />
-                  <TextField fx:id="Strasse" layoutX="151.0" layoutY="53.0" prefHeight="25.0" prefWidth="125.0" promptText="Strasse" />
-                  <TextField fx:id="Tür_no" layoutX="290.0" layoutY="15.0" prefHeight="25.0" prefWidth="125.0" promptText="Türnummer" />
-                  <TextField fx:id="Postleitzahl" layoutX="290.0" layoutY="53.0" prefHeight="25.0" prefWidth="125.0" promptText="Postleitzahl" />
-                  <Button layoutX="331.0" layoutY="84.0" mnemonicParsing="false" style="-fx-background-color: #EF9393;" text="Aktualisieren" />
-               </children>
-            </Pane>
-            <Pane prefHeight="100.0" prefWidth="454.0" style="-fx-background-color: #EF9393;" />
+            <Pane prefHeight="216.0" prefWidth="454.0" style="-fx-background-color: #ffffff;" />
          </children>
       </VBox>
    </children>
