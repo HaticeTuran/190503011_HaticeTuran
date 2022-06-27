@@ -42,18 +42,28 @@
                   <Button fx:id="EditButton" layoutX="5.0" layoutY="7.0" mnemonicParsing="false" onAction="#switchToProfil" prefHeight="25.0" prefWidth="135.0" text="Edit Profil" />
                </children>
             </Pane>
-            <Pane prefHeight="85.0" prefWidth="145.0">
+            <Pane prefHeight="97.0" prefWidth="145.0">
                <children>
-                  <ChoiceBox fx:id="AktionChoise" accessibleText="Aktion auswählen!" layoutX="5.0" layoutY="23.0" prefHeight="25.0" prefWidth="135.0" />
-                  <Label layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="135.0" text="Studentoperationen" textFill="WHITE" />
-                  <Button fx:id="OK" layoutX="107.0" layoutY="56.0" mnemonicParsing="false" onAction="#switchAktion" text="OK" />
+                  <ChoiceBox fx:id="AktionChoise" accessibleText="Aktion auswählen!" layoutX="5.0" layoutY="36.0" prefHeight="25.0" prefWidth="135.0" />
+                  <Label layoutX="29.0" layoutY="14.0" prefHeight="17.0" prefWidth="111.0" text="Studentoperationen" textFill="WHITE" />
+                  <Button fx:id="OK" layoutX="107.0" layoutY="71.0" mnemonicParsing="false" onAction="#switchAktion" text="OK" />
+                  <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="3.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/schoolboy.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
-            <Pane prefHeight="123.0" prefWidth="145.0">
+            <Pane prefHeight="102.0" prefWidth="145.0">
                <children>
-                  <Label layoutX="17.0" layoutY="6.0" text="Benutzeroperationen" textFill="#f8f6f6" />
-                  <ChoiceBox fx:id="UserChoise" layoutX="5.0" layoutY="23.0" prefHeight="25.0" prefWidth="135.0" />
-                  <Button fx:id="ChoiseOp" layoutX="107.0" layoutY="55.0" mnemonicParsing="false" onAction="#switchAdminSeite" text="OK" />
+                  <Label layoutX="28.0" layoutY="14.0" text="Benutzeroperationen" textFill="#f8f6f6" />
+                  <ChoiceBox fx:id="UserChoise" layoutX="5.0" layoutY="37.0" prefHeight="25.0" prefWidth="135.0" />
+                  <Button fx:id="ChoiseOp" layoutX="106.0" layoutY="75.0" mnemonicParsing="false" onAction="#switchAdminSeite" text="OK" />
+                  <ImageView fitHeight="25.0" fitWidth="22.0" layoutX="3.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/administrator.png" />
+                     </image>
+                  </ImageView>
                </children>
             </Pane>
          </children>

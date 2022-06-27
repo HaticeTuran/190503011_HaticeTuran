@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+import java.net.PortUnreachableException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Set;
@@ -458,6 +459,49 @@ public class db {
         }catch (Exception e){
             System.out.println(e);
         }
+    }
+
+    //update Notes für Students
+    public static void updateNotes(String sID, int pID, int Note){
+        String s1 = "UPDATE Noten SET Note= "+Note+" WHERE  SchuelerID= '"+sID+"'AND PruefungID ="+pID+";";
+        System.out.println(s1);
+        try {
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(s1);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    // DELETE NOTE
+    public static void deleteNotes(String sID, int pID, int Note){
+        String s1 = "DELETE FROM Noten WHERE SchuelerID='"+sID+ "' AND PruefungID= "+pID+" AND Note= "+Note+";";
+        System.out.println(s1);
+        try {
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(s1);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    //Kontrolle ob eine solche Note gibt
+    public static Boolean containsNote(String sID, int pID, int Note){
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet res = stmt.executeQuery("SELECT * FROM Noten;");
+            while (res.next()){
+                String s1 = res.getString("SchuelerID");
+                int s2 = res.getInt("PruefungID");
+                int s3 = res.getInt("Note");
+
+                if(sID.equals(s1) && pID ==s2 && Note == s3){
+                    return true;
+                }
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return false;
     }
 
 }

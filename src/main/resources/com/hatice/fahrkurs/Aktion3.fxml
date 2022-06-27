@@ -35,7 +35,9 @@
             <TextField fx:id="Note" layoutX="14.0" layoutY="134.0" prefHeight="25.0" prefWidth="115.0" promptText="Note" />
             <TextField layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="115.0" text="Schueler" />
             <TextField layoutX="14.0" layoutY="90.0" prefHeight="25.0" prefWidth="115.0" text="Pruefung" />
-            <Button fx:id="noteAdd" layoutX="257.0" layoutY="134.0" mnemonicParsing="false" onAction="#addNotes" text="Add" />
+            <Button fx:id="noteAdd" layoutX="387.0" layoutY="115.0" mnemonicParsing="false" onAction="#addNotes" text="Add" />
+            <Button fx:id="aktualisieren" layoutX="341.0" layoutY="43.0" mnemonicParsing="false" onAction="#updateNote" text="Aktualisieren" />
+            <Button fx:id="delete" layoutX="373.0" layoutY="78.0" mnemonicParsing="false" onAction="#deleteNote" text="Delete" />
          </children>
       </AnchorPane>
       <Label fx:id="errorMsg" layoutX="148.0" layoutY="151.0" prefHeight="17.0" prefWidth="197.0" />

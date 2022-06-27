@@ -16,6 +16,12 @@ public class Aktion3Controller {
     private Button AddStudButton;
 
     @FXML
+    private Button delete;
+
+    @FXML
+    private Button aktualisieren;
+
+    @FXML
     private ChoiceBox<String> students;
 
     @FXML
@@ -66,6 +72,64 @@ public class Aktion3Controller {
         //
         if(!arrOfStr[3].equals("") && !arrOfStr1[1].equals("") && !Note.getText().equals("")){
             db.addNotes(arrOfStr[3],Integer.parseInt(arrOfStr1[1]),Integer.parseInt(Note.getText()));
+        }else{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ungueltige Operation!");
+            alert.setHeaderText("Es gibt Luecken, die Sie ausfüllen müssen. ");
+            alert.setContentText("Bitte, kontrollieren!!");
+            if (alert.showAndWait().get() == ButtonType.OK) {
+                //
+            }
+        }
+
+    }
+    public void deleteNote(){
+        String act = (String) this.students.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr = act.split(" ");
+        System.out.println(arrOfStr[3]);
+
+        String act1 = (String) this.exams.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr1 = act1.split(" ");
+
+        System.out.println(arrOfStr1[1]);
+        //
+        if(!arrOfStr[3].equals("") && !arrOfStr1[1].equals("") && !Note.getText().equals("")){
+            if(db.containsNote(arrOfStr[3],Integer.parseInt(arrOfStr1[1]),Integer.parseInt(Note.getText()))){
+                db.deleteNotes(arrOfStr[3],Integer.parseInt(arrOfStr1[1]),Integer.parseInt(Note.getText()));
+            }else{
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Ungueltige Operation!");
+                alert.setHeaderText("Falsche Eingabe. Es gibt keine Schüler mit diesem Note! ");
+                alert.setContentText("Bitte, kontrollieren!!");
+                if (alert.showAndWait().get() == ButtonType.OK) {
+                    //
+                }
+            }
+        }else{
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Ungueltige Operation!");
+            alert.setHeaderText("Es gibt Luecken, die Sie ausfüllen müssen. ");
+            alert.setContentText("Bitte, kontrollieren!!");
+            if (alert.showAndWait().get() == ButtonType.OK) {
+                //
+            }
+        }
+    }
+
+    //update Noten
+    public void updateNote(){
+        String act = (String) this.students.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr = act.split(" ");
+        System.out.println(arrOfStr[3]);
+
+        String act1 = (String) this.exams.getSelectionModel().getSelectedItem().toString();
+        String[] arrOfStr1 = act1.split(" ");
+
+        System.out.println(arrOfStr1[1]);
+        //
+        if(!arrOfStr[3].equals("") && !arrOfStr1[1].equals("") && !Note.getText().equals("")){
+
+                db.updateNotes(arrOfStr[3],Integer.parseInt(arrOfStr1[1]),Integer.parseInt(Note.getText()));
         }else{
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Ungueltige Operation!");
