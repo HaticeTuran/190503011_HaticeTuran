@@ -4,13 +4,15 @@ import java.util.Date;
 
 public class Pruefung {
     private Date Datum;
-    private String Ort;
+    //private String Ort;
+    private int KursID;
     private String Topic;
     private int Note;
 
-    public Pruefung(Date datum, String ort, String topic, int note) {
+
+    public Pruefung(Date datum, int kID, String topic, int note) {
         Datum = datum;
-        Ort = ort;
+        KursID = kID;
         Topic = topic;
         Note = note;
     }
@@ -23,13 +25,13 @@ public class Pruefung {
         Datum = datum;
     }
 
-    public String getOrt() {
+    /*public String getOrt() {
         return Ort;
     }
 
     public void setOrt(String ort) {
         Ort = ort;
-    }
+    }*/
 
     public String getTopic() {
         return Topic;
@@ -49,6 +51,6 @@ public class Pruefung {
 
     @Override
     public String toString(){
-        return Datum + " " + Ort + " "+ Topic + " "+Note;
+        return Datum + " "+ Topic + " "+Note;
     }
 }

@@ -142,10 +142,11 @@ public class db {
             //System.out.println(GDatum);
             String s1 = "INSERT INTO Person (TC,Name,Nachname,Geburtsdatum) VALUES('"+tc+"','"+name+"','"+nname+"','" + GDatum + "');";
             String s2 = "INSERT INTO FahrSchueler (Kurs_id,Blutgruppe,Lehrer_id,TC_No) VALUES("+KursId+",'"+blutt+"','"+L_id+"','"+tc+"');";
-            /*System.out.println(s1);
-            System.out.println(s2);*/
+            System.out.println(s1);
+            System.out.println(s2);
 
             try {
+                stmt = conn.createStatement();
                 stmt.executeUpdate(s1);
                 stmt.executeUpdate(s2);
             }catch (Exception e){
